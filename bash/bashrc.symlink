@@ -1,0 +1,22 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+declare -x CLICOLOR=true
+export PS1="\[\e[32;40m\]\h:\[\e[0m\]\W \u\$ "
+export HISTIGNORE="&:[ ]*"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+if [ ! -z $TMUX ]; then
+	PROMPT_COMMAND="echo -ne \"\\\033k\${PWD##*/}\\033\\\\\""
+    # SSH Wrapper for tmux
+    ssh() {
+        tmux rename-window "$*"
+        command ssh "$@"
+        echo "Counting to 2"
+        sleep 2 && exit
+        tmux rename-window "bash (exited ssh)"
+    }
+export TMUX_POWERLINE_SEG_WEATHER_LOCATION=638242
+fi
