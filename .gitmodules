@@ -1,0 +1,6 @@
+[submodule "vim/vim.symlink/bundle/vim-mode"]
+	path = vim/vim.symlink/bundle/python-mode
+	url = https://github.com/klen/python-mode.git
+[submodule "bash/bash-git-prompt.symlink"]
+	path = bash/bash-git-prompt.symlink
+	url = https://github.com/magicmonty/bash-git-prompt.git
