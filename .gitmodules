@@ -4,3 +4,9 @@
 [submodule "bash/bash-git-prompt.symlink"]
 	path = bash/bash-git-prompt.symlink
 	url = https://github.com/magicmonty/bash-git-prompt.git
+[submodule "vim/vim.symlink/bundle/nerdtree"]
+	path = vim/vim.symlink/bundle/nerdtree
+	url = https://github.com/pnoguera/dotfiles.git
+[submodule "vim/vim/vim.symlink/bundle/supertab"]
+	path = vim/vim/vim.symlink/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
