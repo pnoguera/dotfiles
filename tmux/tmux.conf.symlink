@@ -115,10 +115,19 @@ bind -r J resize-pane -D 2
 bind -r K resize-pane -U 2
 bind -r L resize-pane -R 2
 
+# pane selection
+bind-key -n C-Up             select-pane -U
+bind-key -n C-Down           select-pane -D
+bind-key -n C-Left           select-pane -L
+bind-key -n C-Right          select-pane -R
+
 # window navigation
 bind -n S-Left  previous-window
 bind -n S-Right next-window
-bind Space last-window      # move to last active window
+#bind Space last-window      # move to last active window
+
+# Layout
+bind Space next-layout
 
 # toggle mouse
 bind m run "cut -c3- ~/.tmux.conf | sh -s toggle_mouse"
