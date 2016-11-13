@@ -103,8 +103,11 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
 map <F9> :NERDTreeToggle<CR>
-map <C-n> :MBEbn<CR>
-map <C-p> :MBEbp<CR>
+nmap <C-n> :<C-U>cnext<CR>
+nmap <C-m> :<C-U>cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+"map <C-n> :MBEbn<CR>
+"map <C-p> :MBEbp<CR>
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
