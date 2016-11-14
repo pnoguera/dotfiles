@@ -17,8 +17,8 @@ bind C-a send-prefix -2
 #set -g status-keys vi
 #setw -g mode-keys vi
 
-set -g status-utf8 on                     # expect UTF-8
-setw -g utf8 on
+#set -g status-utf8 on                     # expect UTF-8
+#setw -g utf8 on
 
 set -g history-limit 5000                 # boost history
 
@@ -87,7 +87,7 @@ bind C-f command-prompt -p find-session 'switch-client -t %%'
 bind-key j command-prompt -p "join pane from:" "join-pane -s '%%'"
 bind-key s command-prompt -p "send pane to:" "join-pane -t '%%'"
 bind-key S command-prompt -p "swap window with:" "swap-window -t ':%%'"
-bind-key m command-prompt -p "move window to:" "move-window -t ':%%'"
+bind-key . command-prompt -p "move window to:" "move-window -r -t ':%%'"
 
 # pane navigation
 bind-key -n C-right next
@@ -102,12 +102,6 @@ bind < swap-pane -U       # swap current pane with the previous one
 # maximize current pane
 #bind + run 'cut -c3- ~/.tmux.conf | sh -s maximize_pane'
 bind + break-pane
-
-# pane/window movement
-bind-key j command-prompt -p "join pane from:" "join-pane -s '%%'"
-bind-key s command-prompt -p "send pane to:" "join-pane -t '%%'"
-bind-key S command-prompt -p "swap window with:" "swap-window -t ':%%'"
-bind-key m command-prompt -p "move window to:" "move-window -t ':%%'"
 
 # pane resizing
 bind -r H resize-pane -L 3
@@ -136,6 +130,9 @@ bind m run "cut -c3- ~/.tmux.conf | sh -s toggle_mouse"
 bind-key k confirm kill-window
 bind-key K confirm kill-server
 
+# toggle synchronize pane
+
+bind-key y set-window-option synchronize-panes
 
 # -- list choice ---------------------------------------------------------------
 
