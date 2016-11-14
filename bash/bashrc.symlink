@@ -10,6 +10,7 @@ export HISTIGNORE="&:[ ]*"
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 export HISTTIMEFORMAT='%h/%d - %H:%M:%S '
+
 export EDITOR="vim"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -46,3 +47,6 @@ source "$HOME/google-cloud-sdk/path.bash.inc"
 
 # The next line enables shell command completion for gcloud.
 source "$HOME/google-cloud-sdk/completion.bash.inc"
+
+# Vagrant
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
