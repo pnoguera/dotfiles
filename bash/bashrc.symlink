@@ -43,10 +43,10 @@ GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
 source ~/.bash-git-prompt/gitprompt.sh
 
 # The next line updates PATH for the Google Cloud SDK.
-source "$HOME/google-cloud-sdk/path.bash.inc"
+[ -f $HOME/google-cloud-sdk/path.bash.inc ] && source "$HOME/google-cloud-sdk/path.bash.inc"
 
 # The next line enables shell command completion for gcloud.
-source "$HOME/google-cloud-sdk/completion.bash.inc"
+[ -f "$HOME/google-cloud-sdk/completion.bash.inc" ] && source "$HOME/google-cloud-sdk/completion.bash.inc"
 
 # Vagrant
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
