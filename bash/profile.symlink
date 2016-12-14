@@ -23,4 +23,8 @@ fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+
+# Go variables
 export GOPATH=$HOME/Proyectos/go
+export GOBIN="$GOPATH/bin"
+PATH="$GOBIN:$PATH"
