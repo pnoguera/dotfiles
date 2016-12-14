@@ -18,7 +18,7 @@
 	url = https://github.com/klen/python-mode.git
 [submodule "vim/vim.symlink/bundle/tagbar"]
 	path = vim/vim.symlink/bundle/tagbar
-	url = git://github.com/majutsushi/tagbar
+	url = https://github.com/majutsushi/tagbar.git
 [submodule "vim/vim.symlink/bundle/neocomplete"]
 	path = vim/vim.symlink/bundle/neocomplete
 	url = https://github.com/Shougo/neocomplete.vim.git
