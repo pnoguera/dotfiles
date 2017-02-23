@@ -22,3 +22,6 @@
 [submodule "vim/vim.symlink/bundle/neocomplete"]
 	path = vim/vim.symlink/bundle/neocomplete
 	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule "vim/vim.symlink/bundle/auto-pairs"]
+	path = vim/vim.symlink/bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
