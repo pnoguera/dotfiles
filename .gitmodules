@@ -25,3 +25,6 @@
 [submodule "vim/vim.symlink/bundle/auto-pairs"]
 	path = vim/vim.symlink/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "vim/vim.symlink/bundle/gotests-vim"]
+	path = vim/vim.symlink/bundle/gotests-vim
+	url = https://github.com/buoto/gotests-vim.git
