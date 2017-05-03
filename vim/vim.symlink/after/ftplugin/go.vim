@@ -34,6 +34,16 @@ let g:go_highlight_build_constraints = 1
 " Automatic go imports
 let g:go_fmt_command = "goimports"
 
+" Syntastic
+" let g:syntastic_go_checkers = ['govet', 'errcheck', 'go']
+" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go']  }
+" let g:go_list_type = "quickfix"
+"
+" Syntaxt Check
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_deadline = "5s"
+
 nmap <F8> :TagbarToggle<CR>
 
 " Autocomplete
