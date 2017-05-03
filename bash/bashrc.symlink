@@ -13,6 +13,10 @@ export HISTTIMEFORMAT='%h/%d - %H:%M:%S '
 
 export EDITOR="vim"
 
+# Aliases
+alias weather="curl wttr.in/Berlin"
+
+# Tmux ssh rename window
 if [ ! -z $TMUX ]; then
 	PROMPT_COMMAND="echo -ne \"\\\033k\${PWD##*/}\\033\\\\\""
     # SSH Wrapper for tmux
