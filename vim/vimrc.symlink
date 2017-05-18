@@ -194,3 +194,13 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
+"
+"
+" Denite https://github.com/Shougo/denite.nvim. Unite fork
+nnoremap <silent> ,g :<C-u>Denite grep:. -buffer-name=search-buffer<CR>
+if executable('pt')
+  let g:denite_source_grep_command = 'pt'
+  let g:denite_source_grep_default_opts = '--nogroup --nocolor'
+  let g:denite_source_grep_recursive_opt = ''
+  let g:denite_source_grep_encoding = 'utf-8'
+endif

@@ -28,3 +28,6 @@
 [submodule "vim/vim.symlink/bundle/gotests-vim"]
 	path = vim/vim.symlink/bundle/gotests-vim
 	url = https://github.com/buoto/gotests-vim.git
+[submodule "vim/vim.symlink/bundle/denite-vim"]
+	path = vim/vim.symlink/bundle/denite-vim
+	url = https://github.com/Shougo/denite.nvim.git
