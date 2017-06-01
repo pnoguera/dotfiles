@@ -1,30 +1,6 @@
 [submodule "bash/bash-git-prompt.symlink"]
 	path = bash/bash-git-prompt.symlink
 	url = https://github.com/magicmonty/bash-git-prompt.git
-[submodule "vim/vim.symlink/bundle/supertab"]
-	path = vim/vim.symlink/bundle/supertab
-	url = https://github.com/ervandew/supertab.git
-[submodule "vim/vim.symlink/bundle/vim-arduino-syntax"]
-	path = vim/vim.symlink/bundle/vim-arduino-syntax
-	url = https://github.com/sudar/vim-arduino-syntax.git
-[submodule "vim/vim.symlink/bundle/nerdtree"]
-	path = vim/vim.symlink/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/vim.symlink/bundle/python-mode"]
-	path = vim/vim.symlink/bundle/python-mode
-	url = https://github.com/klen/python-mode.git
-[submodule "vim/vim.symlink/bundle/tagbar"]
-	path = vim/vim.symlink/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
-[submodule "vim/vim.symlink/bundle/neocomplete"]
-	path = vim/vim.symlink/bundle/neocomplete
-	url = https://github.com/Shougo/neocomplete.vim.git
-[submodule "vim/vim.symlink/bundle/auto-pairs"]
-	path = vim/vim.symlink/bundle/auto-pairs
-	url = https://github.com/jiangmiao/auto-pairs.git
-[submodule "vim/vim.symlink/bundle/gotests-vim"]
-	path = vim/vim.symlink/bundle/gotests-vim
-	url = https://github.com/buoto/gotests-vim.git
 [submodule "vim/vim.symlink/bundle/Vundle.vim"]
 	path = vim/vim.symlink/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
