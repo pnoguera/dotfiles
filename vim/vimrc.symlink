@@ -203,7 +203,7 @@ Plugin 'sudar/vim-arduino-syntax'
 Plugin 'buoto/gotests-vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'klen/python-mode'
-" Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/neocomplete'
 " Plugin 'ervandew/supertab'
 
 
