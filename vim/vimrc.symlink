@@ -1,9 +1,63 @@
+"
+" PLUGINS VUNDLE
+"
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Other plugins
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'fatih/vim-go'
+Plugin 'vim-scripts/Conque-GDB'
+Plugin 'vimwiki/vimwiki'
+Plugin 'sudar/vim-arduino-syntax'
+Plugin 'buoto/gotests-vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'klen/python-mode'
+Plugin 'Shougo/neocomplete' " syntaxt complete
+Plugin 'edkolev/tmuxline.vim' " tmux status line integration
+Plugin 'tpope/vim-fugitive' " git branch
+" Plugin 'ervandew/supertab'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
 " Pathogen load
 filetype off
 
 call pathogen#infect()
 call pathogen#helptags()
 
+
+" basic settings
 filetype plugin indent on
 syntax on
 
@@ -11,9 +65,10 @@ syntax on
 set encoding=utf-8
 set background=dark
 set expandtab
+set smarttab
 set tabstop=4
 set shiftwidth=4
-set showcmd		" Show (partial) command in status line.
+set showcmd	    	" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
@@ -24,6 +79,10 @@ set mouse=c		    " Enable mouse usage (command mode)
 " setlocal tabstop=4
 set softtabstop=4
 set showmatch
+
+" Show whitespace
+set list
+set listchars=tab:→\ ,trail:~,extends:>,precedes:<
 
 " For full syntax highlighting:
 let python_highlight_all=1
@@ -55,11 +114,18 @@ set laststatus=2
 set vb
 " show column number
 "set ruler
-"
+" airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 
+" delete trailing whitespace on save
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+autocmd BufWrite *.htm,*.html,*.css,*.js,*.php :call DeleteTrailingWS()
 
 
 if has("autocmd")
@@ -176,56 +242,6 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
-"
-" PLUGINS VUNDLE
-"
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" Other plugins
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'fatih/vim-go'
-Plugin 'vim-scripts/Conque-GDB'
-Plugin 'vimwiki/vimwiki'
-Plugin 'sudar/vim-arduino-syntax'
-Plugin 'buoto/gotests-vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'klen/python-mode'
-Plugin 'Shougo/neocomplete' " syntaxt complete
-Plugin 'edkolev/tmuxline.vim' " tmux status line integration
-Plugin 'tpope/vim-fugitive' " git branch
-" Plugin 'ervandew/supertab'
-
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 
 " always trim trailing whitespace .. is there ever a good reason?

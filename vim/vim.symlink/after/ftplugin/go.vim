@@ -1,3 +1,6 @@
+set number
+set colorcolumn=80
+
 nmap <C-B> <Plug>(go-doc-browser)
 nmap <leader>gs <Plug>(go-doc-split)
 nmap <F4> <Plug>(go-build)
