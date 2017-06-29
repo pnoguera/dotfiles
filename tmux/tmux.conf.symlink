@@ -388,8 +388,8 @@ run '~/.tmux/plugins/tpm/tpm'
 #     if [ ! -d $batpath ]; then
 #       batpath=/sys/class/power_supply/BAT1
 #     fi
-#     batfull=$batpath/energy_full
-#     batnow=$batpath/energy_now
+#     batfull=$batpath/charge_full
+#     batnow=$batpath/charge_now
 #     if [ ! -r $batfull -o ! -r $batnow ]; then
 #       return
 #     fi
