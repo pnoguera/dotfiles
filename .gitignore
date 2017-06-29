@@ -9,3 +9,5 @@ atom.symlink/themes
 git/gitconfig.symlink
 vim/vim.symlink/.netrwhist
 *.pyc
+vim/vim.symlink/bundle/*
+tmux/tmux.symlink/plugins/
