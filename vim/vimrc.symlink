@@ -29,7 +29,7 @@ Plugin 'buoto/gotests-vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'klen/python-mode'
 Plugin 'Shougo/neocomplete' " syntaxt complete
-Plugin 'edkolev/tmuxline.vim' " tmux status line integration
+" Plugin 'edkolev/tmuxline.vim' " tmux status line integration
 Plugin 'tpope/vim-fugitive' " git branch
 " Plugin 'ervandew/supertab'
 
@@ -250,4 +250,4 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 " for things that are particular to this user/computer,
 " you can add commands to a .local_vim file in your home dir
 " and uncommenting the following
-" source .local_vim
+" source .local_vim"
