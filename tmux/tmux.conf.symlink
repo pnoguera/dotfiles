@@ -166,6 +166,16 @@ bind-key K confirm kill-server
 
 bind-key y set-window-option synchronize-panes
 
+# Window creation
+bind c new-window -c '#{pane_current_path}'
+bind c new-window
+
+# Split window
+bind '"' split-window -h -c "#{pane_current_path}"
+bind _ split-window -h -c "#{pane_current_path}"
+bind % split-window -v -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+
 # -- list choice ---------------------------------------------------------------
 
 bind -t vi-choice h tree-collapse
@@ -222,7 +232,7 @@ if '[ -f ~/.tmux.conf.local ]' 'source ~/.tmux.conf.local'
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
 run-shell '~/.tmux/plugins/tmux-battery/battery.tmux'
-
+run-shell '~/.tmux/plugins/tmux-continuum/continuum.tmux'
 
 # ►_◄
 #
