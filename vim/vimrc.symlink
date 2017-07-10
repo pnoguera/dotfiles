@@ -32,6 +32,8 @@ Plugin 'Shougo/neocomplete' " syntaxt complete
 " Plugin 'edkolev/tmuxline.vim' " tmux status line integration
 Plugin 'tpope/vim-fugitive' " git branch
 Plugin 'godoctor/godoctor.vim' " go refactoring tool
+Plugin 'rodjek/vim-puppet' " puppet plugin
+Plugin 'w0rp/ale' " lint plugin
 
 " Plugin 'ervandew/supertab'
 
@@ -179,6 +181,11 @@ nmap <C-m> :<C-U>cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 "map <C-n> :MBEbn<CR>
 "map <C-p> :MBEbp<CR>
+
+" Buffer cycle
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
