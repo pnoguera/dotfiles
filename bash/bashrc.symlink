@@ -51,3 +51,6 @@ export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
 # Ruby (RVM). Keep as the last line!!
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Weather alias
+alias weather='curl http://wttr.in/Berlin'
