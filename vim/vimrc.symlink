@@ -53,9 +53,9 @@ Plugin 'tpope/vim-fugitive' " git branch
 Plugin 'godoctor/godoctor.vim' " go refactoring tool
 Plugin 'rodjek/vim-puppet' " puppet plugin
 Plugin 'w0rp/ale' " lint plugin
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets' " lint plugin
-
-" Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 
 
 " All of your Plugins must be added before the following line
@@ -205,6 +205,15 @@ nnoremap <leader>a :cclose<CR>
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
+" Snippets
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-m>"
+let g:UltiSnipsJumpBackwardTrigger="<c-n>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -212,6 +221,8 @@ map Q gq
 " Folding
 nnoremap <space> za
 vnoremap <space> zf
+" unmap space in selection mode for snippets
+sunmap <space>
 
 " Toggle mouse
 function! ToggleMouse()
@@ -226,6 +237,38 @@ function! ToggleMouse()
 endfunc
 nmap  \m :call ToggleMouse()<CR>
 
+
+"
+" Autocomplete
+" 
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+ return neocomplete#close_popup() . "\<CR>"
+endfunction
+
+" <TAB>: completion.
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+" AutoComplPop like behavior.
+let g:neocomplete#enable_auto_select = 1
 
 " Use the below highlight group when displaying bad whitespace is desired.
 highlight BadWhitespace ctermbg=red guibg=red
