@@ -1,6 +1,25 @@
 "
 " PLUGINS VUNDLE
 "
+if has('vim_starting')
+  set nocompatible               " Be iMproved
+endif
+
+let vundle_exists=expand('~/.vim/bundle/Vundle.vim/README.md')
+
+if !filereadable(vundle_exists)
+  if !executable("git")
+    echoerr "You have to install curl or first install vim-plug yourself!"
+    execute "q!"
+  endif
+  echo "Installing Vundle..."
+  echo ""
+  silent !\git clone https://github.com/VundleVim/Vundle.vim.git .vim/bundle/Vundle.vim
+  let g:not_finish_vundle = "yes"
+
+  autocmd VimEnter * PluginInstall
+endif
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -34,6 +53,7 @@ Plugin 'tpope/vim-fugitive' " git branch
 Plugin 'godoctor/godoctor.vim' " go refactoring tool
 Plugin 'rodjek/vim-puppet' " puppet plugin
 Plugin 'w0rp/ale' " lint plugin
+Plugin 'honza/vim-snippets' " lint plugin
 
 " Plugin 'ervandew/supertab'
 
