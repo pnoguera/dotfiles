@@ -14,7 +14,7 @@ if !filereadable(vundle_exists)
   endif
   echo "Installing Vundle..."
   echo ""
-  silent !\git clone https://github.com/VundleVim/Vundle.vim.git .vim/bundle/Vundle.vim
+  silent !\git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   let g:not_finish_vundle = "yes"
 
   autocmd VimEnter * PluginInstall
