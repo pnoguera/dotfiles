@@ -1,9 +1,6 @@
 [submodule "bash/bash-git-prompt.symlink"]
 	path = bash/bash-git-prompt.symlink
 	url = https://github.com/magicmonty/bash-git-prompt.git
-[submodule "vim/vim.symlink/bundle/Vundle.vim"]
-	path = vim/vim.symlink/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "tmux/tmux.symlink/plugins/tpm"]
 	path = tmux/tmux.symlink/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
