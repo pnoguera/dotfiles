@@ -54,3 +54,6 @@ export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
 # Weather alias
 alias weather='curl http://wttr.in/Berlin'
+
+# go
+[ -d /usr/local/go ] && export PATH=/usr/local/go/bin:$PATH
