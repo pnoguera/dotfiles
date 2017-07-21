@@ -55,6 +55,7 @@ Plugin 'rodjek/vim-puppet' " puppet plugin
 Plugin 'w0rp/ale' " lint plugin
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets' " lint plugin
+Plugin 'tomasr/molokai' "Color
 "Plugin 'ervandew/supertab'
 
 
@@ -99,7 +100,7 @@ set smartcase		" Do smart case matching
 set incsearch		" Incremental search
 "set autowrite		" Automatically save before commands like :next and :make
 set hidden          " Hide buffers when they are abandoned
-set mouse=a		    " Enable mouse usage (command mode)
+set mouse=c		    " Enable mouse usage (command mode)
 " setlocal tabstop=4
 set softtabstop=4
 set showmatch
