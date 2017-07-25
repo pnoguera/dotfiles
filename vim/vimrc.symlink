@@ -57,6 +57,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets' " lint plugin
 Plugin 'tomasr/molokai' "Color
 "Plugin 'ervandew/supertab'
+Plugin 'ctrlpvim/ctrlp.vim' "Color
+
 
 
 " All of your Plugins must be added before the following line
