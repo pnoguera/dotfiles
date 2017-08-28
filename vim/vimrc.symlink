@@ -204,7 +204,7 @@ let g:miniBufExplModSelTarget = 1
 
 map <F9> :NERDTreeToggle<CR>
 nmap <C-n> :<C-U>cnext<CR>
-nmap <C-m> :<C-U>cprevious<CR>
+nmap <C-b> :<C-U>cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 "map <C-n> :MBEbn<CR>
 "map <C-p> :MBEbp<CR>
