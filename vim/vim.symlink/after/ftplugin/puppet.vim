@@ -14,4 +14,4 @@ func! PuppetParserValidate()
 endfunc
 
 map <F5> :call PuppetParserValidate()<CR>
-map <F6> :!puppet-lint validate %<CR>
+map <F6> :!puppet-lint %<CR>
