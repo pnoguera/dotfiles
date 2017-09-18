@@ -58,6 +58,7 @@ Plugin 'tomasr/molokai' "Color
 "Plugin 'ervandew/supertab'
 Plugin 'ctrlpvim/ctrlp.vim' "Color
 Plugin 'Valloric/YouCompleteMe' "autocomplete plugin
+Plugin 'nazo/pt.vim' "pt searcher plugin
 
 
 
