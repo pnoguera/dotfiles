@@ -58,6 +58,7 @@ Plugin 'tomasr/molokai' "Color
 "Plugin 'ervandew/supertab'
 Plugin 'ctrlpvim/ctrlp.vim' "Color
 Plugin 'Valloric/YouCompleteMe' "autocomplete plugin
+Plugin 'JamshedVesuna/vim-markdown-preview' "autocomplete plugin
 
 
 
@@ -310,6 +311,9 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
+
+" Markdown preview key
+let vim_markdown_preview_hotkey='<C-o>'
 
 
 " always trim trailing whitespace .. is there ever a good reason?
