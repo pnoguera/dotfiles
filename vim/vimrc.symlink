@@ -59,6 +59,7 @@ Plugin 'tomasr/molokai' "Color
 Plugin 'ctrlpvim/ctrlp.vim' "Color
 Plugin 'Valloric/YouCompleteMe' "autocomplete plugin
 Plugin 'JamshedVesuna/vim-markdown-preview' "autocomplete plugin
+Plugin 'nazo/pt.vim' "pt searcher plugin
 
 
 
