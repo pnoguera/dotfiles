@@ -1,27 +1,51 @@
-Rxvt*selectToClipboard: true
-Rxvt*utf8: 1
-Rxvt*locale: true
+! standard global fonts {{{
+#define FONT_NORMAL     xft:DejaVu Sans Mono for Powerline:size=11:antialias=1
+#define FONT_BOLD       xft:DejaVu Sans Mono for Powerline:bold:size=11:antialias=1
+!#define FONT_NORMAL     xft:DejaVu Sans Mono for Powerline:size=11:antialias=1:hinting=1:hintstyle=3
+!#define FONT_BOLD       xft:DejaVu Sans Mono for Powerline:bold:size=11:antialias=1:hinting=1:hintstyle=3
+#define FONT_ITALIC     -misc-fixed-medium-r-normal--9-90-75-75-c-60-iso8859-1,6x9
+#define FONT_BOLDITALIC -misc-fixed-medium-r-normal--7-70-75-75-c-50-koi8
+! }}}
+URxvt*selectToClipboard: true
+URxvt*utf8: 1
+URxvt*locale: true
 
-Rxvt*saveLines: 4096
-Rxvt*scrollBar: false
-!Rxvt*scrollbar.width: 8
+URxvt*saveLines: 4096
+URxvt*scrollBar: false
+!URxvt*scrollbar.width: 8
 
-Rxvt*font: xft:DejaVu Sans Mono for Powerline:size=10:antialias=true
-Rxvt*boldFont: xft:DejaVu Sans Mono for Powerline:bold:size=11
+!! -- Fonts -- !
+URxvt*font: FONT_NORMAL
+URxvt*boldFont: FONT_BOLD
+URxvt*letterSpace: -1
 
-Rxvt*reverseVideo: true
+!URxvt*reverseVideo: true
 
-Rxvt*bellIsUrgent: true
-Rxvt*transparent: true
+URxvt*bellIsUrgent: true
+!URxvt*transparent: true
+!URxvt*shading: 150
+!URxvt*tintColor: Blue
 
-!
+URxvt*depth: 32
+URxvt*background: [95]#000000
+URxvt*foreground: [100]#AAAAAA
+
+URxvt.iconFile: /usr/share/icons/Tango/scalable/apps/terminal.svg
+
+! Replace some colors
+URxvt*color4: RoyalBlue
+URxvt*color12: RoyalBlue
+
 !! extension
 !!
 !! matcher for clickable urls and vtwheel for scroll in man, less, etc.
-Rxvt.perl-ext-common:  default,matcher,vtwheel,fullscreen
-Rxvt.url-launcher:     /usr/bin/chromium
-Rxvt.matcher.button: 1
-Rxvt.keysym.F11: perl:fullscreen:switch
+URxvt.perl-ext-common:  default,matcher,vtwheel,fullscreen
+URxvt.url-launcher:     /usr/bin/firefox
+URxvt.matcher.button: 1
+URxvt.keysym.F11: perl:fullscreen:switch
+
+
+!! XTERM
 
 XTerm*selectToClipboard: true
 XTerm*utf8: 1
@@ -50,4 +74,4 @@ XTerm.VT100.translations: #override \
     Super <Key> KP_Subtract: smaller-vt-font() \n\
     Super <Key> KP_Add: larger-vt-font() \n
 
-xterm*termName: xterm-256color
+Xterm*termName: xterm-256color
