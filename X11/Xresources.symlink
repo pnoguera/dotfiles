@@ -5,7 +5,49 @@
 !#define FONT_BOLD       xft:DejaVu Sans Mono for Powerline:bold:size=11:antialias=1:hinting=1:hintstyle=3
 #define FONT_ITALIC     -misc-fixed-medium-r-normal--9-90-75-75-c-60-iso8859-1,6x9
 #define FONT_BOLDITALIC -misc-fixed-medium-r-normal--7-70-75-75-c-50-koi8
+
+! Colors Solarized https://github.com/altercation/solarized/blob/master/xresources/solarized
+!
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+! dark
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
 ! }}}
+
+
+! Colors
+*color0:                  S_base02
+*color1:                  S_red
+*color2:                  S_green
+*color3:                  S_yellow
+*color4:                  S_blue
+*color5:                  S_magenta
+*color6:                  S_cyan
+*color7:                  S_base2
+*color9:                  S_orange
+*color8:                  S_base03
+*color10:                 S_base01
+*color11:                 S_base00
+*color12:                 S_base0
+*color13:                 S_violet
+*color14:                 S_base1
+*color15:                 S_base3
+
+! URxvt
 URxvt*selectToClipboard: true
 URxvt*utf8: 1
 URxvt*locale: true
