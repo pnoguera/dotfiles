@@ -26,5 +26,5 @@ export JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFe
 
 # Go variables
 export GOPATH=$HOME/go:$HOME/Projects/go
-export GOBIN="$GOPATH/bin"
+export GOBIN="$HOME/go/bin"
 export PATH=$GOBIN:$PATH
