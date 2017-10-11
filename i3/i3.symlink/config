@@ -177,7 +177,6 @@ exec --no-startup-id parcellite
 exec_always --no-startup-id feh --bg-scale ~/.i3/wallpaper.jpg
 exec_always --no-startup-id "setxkbmap -model pc104 -layout de,us -variant ,, -option grp:alt_shift_toggle"
 exec_always --no-statup-id "~/.i3/start-gnome-keyring.sh"
-exec_always --no-startup-id "xautolock -time 5 -locker 'i3lock'"
 
 
 # Pulse Audio controls
@@ -207,6 +206,7 @@ set $Docker ~/.i3/docker.sh
 # Locker
 set $Locker i3lock -i ~/.i3/lock.png -c 141414 && sleep 1
 bindsym ctrl+$mod+l exec $Locker
+exec_always --no-startup-id "xautolock -time 5 -locker '$Locker'"
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
