@@ -60,7 +60,7 @@ Plugin 'ctrlpvim/ctrlp.vim' "Color
 Plugin 'Valloric/YouCompleteMe' "autocomplete plugin
 Plugin 'JamshedVesuna/vim-markdown-preview' "autocomplete plugin
 Plugin 'nazo/pt.vim' "pt searcher plugin
-
+Plugin 'tpope/vim-surround' "Surrounding plugin
 
 
 " All of your Plugins must be added before the following line
