@@ -206,7 +206,7 @@ set $Docker ~/.i3/docker.sh
 # Locker
 set $Locker i3lock -i ~/.i3/lock.png -c 141414 && sleep 1
 bindsym ctrl+$mod+l exec $Locker
-exec_always --no-startup-id "xautolock -time 5 -locker '$Locker'"
+exec_always --no-startup-id xautolock -time 5 -locker '$Locker' -corners -000 -notify 30 -detectsleep -notifier 'notify-send -u critical -t 10000 -- "LOCKING screen in 30 seconds"'
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
