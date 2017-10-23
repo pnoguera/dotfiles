@@ -61,6 +61,7 @@ Plugin 'Valloric/YouCompleteMe' "autocomplete plugin
 Plugin 'JamshedVesuna/vim-markdown-preview' "autocomplete plugin
 Plugin 'nazo/pt.vim' "pt searcher plugin
 Plugin 'tpope/vim-surround' "Surrounding plugin
+Plugin 'tpope/vim-unimpaired' "Unimpaired
 
 
 " All of your Plugins must be added before the following line
@@ -205,8 +206,6 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
 map <F9> :NERDTreeToggle<CR>
-nmap <C-n> :<C-U>cnext<CR>
-nmap <C-b> :<C-U>cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 "map <C-n> :MBEbn<CR>
 "map <C-p> :MBEbp<CR>
