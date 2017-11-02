@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 EXIT=0
 
+echo "Installing tmux"
+
+[ -f /etc/debian_version ] && apt-get install tmux
+
 echo "Installing fonts"
 
 which cmake || (echo "cmake required" && EXIT=1)
