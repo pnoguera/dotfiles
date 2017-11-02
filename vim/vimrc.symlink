@@ -62,6 +62,7 @@ Plugin 'JamshedVesuna/vim-markdown-preview' "autocomplete plugin
 Plugin 'nazo/pt.vim' "pt searcher plugin
 Plugin 'tpope/vim-surround' "Surrounding plugin
 Plugin 'tpope/vim-unimpaired' "Unimpaired
+Plugin 'aquach/vim-http-client' "HTTP Client
 
 
 " All of your Plugins must be added before the following line
