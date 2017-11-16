@@ -1,3 +1,3 @@
 set colorcolumn=80
-set textwidth=80
+setlocal tw=80
 set spell

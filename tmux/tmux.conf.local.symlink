@@ -9,7 +9,7 @@ tmux_conf_theme=powerline_patched_font
 #tmux_conf_battery_palette=heat
 
 # display the battery status: charging (U+26A1) / discharging (U+1F50B)
-#tmux_conf_battery_status=true
+tmux_conf_battery_status=true
 
 # or alternatively use an external tool, e.g. https://github.com/Goles/Battery
 #tmux_conf_battery='#(battery -t) '
