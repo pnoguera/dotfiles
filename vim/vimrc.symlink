@@ -56,7 +56,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets' " lint plugin
 Plugin 'tomasr/molokai' "Color
 "Plugin 'ervandew/supertab'
-Plugin 'ctrlpvim/ctrlp.vim' "Color
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe' "autocomplete plugin
 Plugin 'JamshedVesuna/vim-markdown-preview' "autocomplete plugin
 Plugin 'nazo/pt.vim' "pt searcher plugin
@@ -64,6 +64,7 @@ Plugin 'tpope/vim-surround' "Surrounding plugin
 Plugin 'tpope/vim-unimpaired' "Unimpaired
 Plugin 'aquach/vim-http-client' "HTTP Client
 Plugin 'tpope/vim-commentary' "Add comment with gc
+Plugin 'drewtempelmeyer/palenight.vim' "New colorscheme
 
 
 " All of your Plugins must be added before the following line
@@ -92,6 +93,10 @@ call pathogen#helptags()
 " basic settings
 filetype plugin indent on
 syntax on
+
+" Color
+colorscheme palenight
+" highlight Normal ctermbg=none
 
 " Set the default file encoding to UTF-8:
 set encoding=utf-8
