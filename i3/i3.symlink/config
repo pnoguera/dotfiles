@@ -204,6 +204,9 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshot
 bindsym Print exec gnome-screenshot
+bindsym Shift+Print exec gnome-screenshot -a
+bindsym Ctrl+Print exec gnome-screenshot -c
+bindsym Ctrl+Shift+Print exec gnome-screenshot -a -c
 
 # Power management
 set $Docker ~/.i3/docker.sh
