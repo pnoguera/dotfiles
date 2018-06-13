@@ -224,8 +224,8 @@ nnoremap <S-Tab> :bprevious<CR>
 " Snippets
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-m>"
-let g:UltiSnipsJumpBackwardTrigger="<c-n>"
+" let g:UltiSnipsJumpForwardTrigger="<c-m>" "default C-j"
+" let g:UltiSnipsJumpBackwardTrigger="<c-n>" "default C-k"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
