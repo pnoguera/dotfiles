@@ -58,7 +58,7 @@ Plugin 'tomasr/molokai' "Color
 "Plugin 'ervandew/supertab'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe' "autocomplete plugin
-Plugin 'JamshedVesuna/vim-markdown-preview' "autocomplete plugin
+Plugin 'JamshedVesuna/vim-markdown-preview' "markdown plugin
 Plugin 'nazo/pt.vim' "pt searcher plugin
 Plugin 'tpope/vim-surround' "Surrounding plugin
 Plugin 'tpope/vim-unimpaired' "Unimpaired
@@ -89,7 +89,6 @@ filetype off
 call pathogen#infect()
 call pathogen#helptags()
 
-
 " basic settings
 filetype plugin indent on
 syntax on
@@ -104,6 +103,7 @@ set background=dark
 set expandtab
 set smarttab
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set showcmd	    	" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
@@ -112,9 +112,8 @@ set smartcase		" Do smart case matching
 set incsearch		" Incremental search
 "set autowrite		" Automatically save before commands like :next and :make
 set hidden          " Hide buffers when they are abandoned
-set mouse=c		    " Enable mouse usage (command mode)
-" setlocal tabstop=4
-set softtabstop=4
+set mouse=a		    " Enable mouse usage all modes
+set guioptions+=a   " Enable x11 copy from visual select
 set showmatch
 
 " Show whitespace
@@ -129,27 +128,13 @@ set foldmethod=indent
 set nofoldenable
 
 " I like hitting tab and getting two spaces
-au BufRead,BufNewFile *.js,*.html,*.css set softtabstop=2
-" setlocal shiftwidth=4
-" setlocal textwidth=80
-" setlocal smarttab
-" setlocal expandtab
-" setlocal smartindent
-" set noic "no ignore case
-" set t_Co=256
+autocmd BufRead,BufNewFile *.js,*.html,*.css set softtabstop=2
 
 "set cursorline
 set laststatus=2
-"set clipboard=unnamed
-"set go+=a
-"vnoremap y "+y
-"set paste
 
-" show line number
-"set nu
 " no beeps
-set vb
-" show column number
+set visualbell
 "set ruler
 "
 " airline
@@ -170,8 +155,6 @@ autocmd BufWrite *.htm,*.html,*.css,*.js,*.php :call DeleteTrailingWS()
 
 
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-  "
   " Set File type to 'text' for files ending in .txt
   autocmd BufNewFile,BufRead *.txt setfiletype text
   " Uncomment the following to have Vim load indentation rules and plugins
