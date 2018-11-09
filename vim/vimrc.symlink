@@ -65,6 +65,7 @@ Plugin 'tpope/vim-unimpaired' "Unimpaired
 Plugin 'aquach/vim-http-client' "HTTP Client
 Plugin 'tpope/vim-commentary' "Add comment with gc
 Plugin 'drewtempelmeyer/palenight.vim' "New colorscheme
+Plugin 'hashivim/vim-terraform' "Terraform integration
 
 
 " All of your Plugins must be added before the following line
