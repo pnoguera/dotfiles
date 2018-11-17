@@ -65,6 +65,8 @@ Plugin 'tpope/vim-unimpaired' "Unimpaired
 Plugin 'aquach/vim-http-client' "HTTP Client
 Plugin 'tpope/vim-commentary' "Add comment with gc
 Plugin 'drewtempelmeyer/palenight.vim' "New colorscheme
+Plugin 'lervag/vimtex' "Latex plugin. https://wikimatze.de/vimtex-the-perfect-tool-for-working-with-tex-and-vim/
+
 
 
 " All of your Plugins must be added before the following line
@@ -304,6 +306,10 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 " Markdown preview key
 let vim_markdown_preview_hotkey='<C-o>'
+
+" Latex viewer
+" let g:vimtex_view_general_viewer = "evince"
+let g:vimtex_view_method = 'zathura'
 
 
 " always trim trailing whitespace .. is there ever a good reason?
