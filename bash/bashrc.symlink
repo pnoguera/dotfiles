@@ -2,10 +2,27 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# gitprompt configuration
+# Set config variables first
+GIT_PROMPT_ONLY_IN_REPO=1
+GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
+GIT_PROMPT_SHOW_UPSTREAM=1 # uncomment to show upstream tracking branch
+# GIT_PROMPT_STATUS_COMMAND=gitstatus_pre-1.7.10.sh # uncomment to support Git older than 1.7.10
+# GIT_PROMPT_START=...    # uncomment for custom prompt start sequence
+# GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
+
+# as last entry source the gitprompt script
+# GIT_PROMPT_THEME=Custom # use custom .git-prompt-colors.sh
+GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
+source ~/.bash-git-prompt/gitprompt.sh
+
+
 declare -x CLICOLOR=true
 #export PS1="\[\e[32;40m\]\h:\[\e[0m\]\W \u\$ "
 #export PS1="\[\033[40m\]\[\033[33m\][ \u@\H:\[\033[32m\]\w$(__git_ps1 ' \[\033[35m\]{\[\033[36m\]%s\[\033[35m\]}')\[\033[33m\] ]$\[\033[0m\] "
-export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$\[\033[00m\] "
+#export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$\[\033[00m\] "
+export PS1="\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\$(__git_ps1 ' \[\033[35m\]{\[\033[36m\]%s\[\033[35m\]}')\[\033[33m\] $\[\033[0m\] "
+
 export HISTIGNORE="&:[ ]*"
 export HISTFILESIZE=10000
 export HISTSIZE=10000
@@ -29,20 +46,6 @@ if [ ! -z $TMUX ]; then
     }
     export TMUX_POWERLINE_SEG_WEATHER_LOCATION=638242
 fi
-
-# gitprompt configuration
-# Set config variables first
-GIT_PROMPT_ONLY_IN_REPO=1
-GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
-GIT_PROMPT_SHOW_UPSTREAM=1 # uncomment to show upstream tracking branch
-# GIT_PROMPT_STATUS_COMMAND=gitstatus_pre-1.7.10.sh # uncomment to support Git older than 1.7.10
-# GIT_PROMPT_START=...    # uncomment for custom prompt start sequence
-# GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
-
-# as last entry source the gitprompt script
-# GIT_PROMPT_THEME=Custom # use custom .git-prompt-colors.sh
-GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
-source ~/.bash-git-prompt/gitprompt.sh
 
 # The next line updates PATH for the Google Cloud SDK.
 [ -f $HOME/google-cloud-sdk/path.bash.inc ] && source "$HOME/google-cloud-sdk/path.bash.inc"
