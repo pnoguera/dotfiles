@@ -4,7 +4,8 @@ IFS=$'\n\t'
 
 
 if [ -f /etc/debian_version ]; then
-    apt-get install 
+    apt-get -y install \
         vim \
-        python-requests
+        python-requests \
+        xdotool
 fi
