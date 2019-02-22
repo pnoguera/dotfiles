@@ -1,0 +1,13 @@
+# Should be put in /etc/systemd/system/ and enabled with systemctl
+
+[Unit]
+Description=Lock screen before suspend
+Before=sleep.target
+
+[Service]
+Type=simple
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/i3lock -i /home/pablo/.i3/lock.png -c 141414 && sleep 1 
+
+[Install]
+WantedBy=suspend.target
