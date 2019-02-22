@@ -4,8 +4,9 @@ IFS=$'\n\t'
 
 
 if [ -f /etc/debian_version ]; then
-    apt-get -y install \
+    sudo apt-get -y install \
         vim \
         python-requests \
+        markdown \
         xdotool
 fi
