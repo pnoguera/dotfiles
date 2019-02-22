@@ -47,11 +47,27 @@ if [ ! -z $TMUX ]; then
     export TMUX_POWERLINE_SEG_WEATHER_LOCATION=638242
 fi
 
+#
+# AUTOCOMPLETION
+#
+
+# enable bash completion in interactive shells
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
 # The next line updates PATH for the Google Cloud SDK.
 [ -f $HOME/google-cloud-sdk/path.bash.inc ] && source "$HOME/google-cloud-sdk/path.bash.inc"
 
 # The next line enables shell command completion for gcloud.
 [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ] && source "$HOME/google-cloud-sdk/completion.bash.inc"
+
+# AWS
+which aws > /dev/null && complete -C aws_completer aws
 
 # Vagrant
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
