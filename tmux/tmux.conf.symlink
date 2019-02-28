@@ -106,6 +106,7 @@ set -g window-status-style fg=colour85,bg=colour232
 set -g window-status-activity-style fg=colour190,blink,bg=colour232
 
 # -- restore session -----------------------------------------------------------
+set -g @continuum-boot 'on'
 set -g @continuum-restore 'on'
 
 # -- navigation ----------------------------------------------------------------
