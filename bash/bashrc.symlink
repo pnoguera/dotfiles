@@ -80,6 +80,9 @@ fi
 # AWS
 which aws > /dev/null && complete -C aws_completer aws
 
+# Kubectl
+which kubectl > /dev/null && source <(kubectl completion bash)
+
 # Vagrant
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
