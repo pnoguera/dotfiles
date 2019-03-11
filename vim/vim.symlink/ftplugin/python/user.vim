@@ -13,8 +13,6 @@ map <F6> :Intpyrun<CR>
 map <F7> :TaskList<CR>
 nnoremap <silent> <F8> :TlistToggle<CR>
 
-"execute "nnoremap <silent> <buffer>K :call jedi#show_pydoc()<CR>"
-let g:jedi#pydoc = "K"
-let g:jedi#use_tabs_not_buffers = 0
-
 let g:SuperTabDefaultCompletionType = "context"
+
+let g:pymode_python = 'python3'
