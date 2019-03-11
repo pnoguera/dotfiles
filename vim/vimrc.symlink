@@ -41,12 +41,12 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'fatih/vim-go'
-Plugin 'vim-scripts/Conque-GDB'
+Plugin 'guill/Conque-GDB'
 Plugin 'vimwiki/vimwiki'
 Plugin 'sudar/vim-arduino-syntax'
 Plugin 'buoto/gotests-vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'klen/python-mode'
+Plugin 'python-mode/python-mode'
 " Plugin 'edkolev/tmuxline.vim' " tmux status line integration
 Plugin 'tpope/vim-fugitive' " git branch
 Plugin 'godoctor/godoctor.vim' " go refactoring tool
