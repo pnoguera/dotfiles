@@ -2,6 +2,12 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# Set vim mode for bash. Deactivate with set +o vi
+set -o vi
+
+# Alt+. for inserting last argument of the previous command
+bind -m vi-insert '"\e."':"yank-last-arg"
+
 # gitprompt configuration
 # Set config variables first
 GIT_PROMPT_ONLY_IN_REPO=1
