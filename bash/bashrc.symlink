@@ -2,11 +2,14 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# Set vim mode for bash. Deactivate with set +o vi
-set -o vi
+# # Set vim mode for bash. Deactivate with set -o emacs
+# set -o vi
 
-# Alt+. for inserting last argument of the previous command
-bind -m vi-insert '"\e."':"yank-last-arg"
+# # Alt+. for inserting last argument of the previous command
+# bind -m vi-insert '"\e."':"yank-last-arg"
+# bind -m vi-insert '"\C-l":"clear-screen"'
+# bind -m vi-insert '"\C-a":"beginning-of-line"'
+# bind -m vi-insert '"\C-w":"\eBdWi"'
 
 # gitprompt configuration
 # Set config variables first
@@ -49,6 +52,8 @@ alias gco='git checkout'
 alias gcb='git copy-branch-name'
 alias gb='git branch'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
+alias wo='workon $(basename $PWD)'
+alias k='kubectl --context $K8S_CONTEXT'
 
 # Tmux ssh rename window
 if [ ! -z $TMUX ]; then
