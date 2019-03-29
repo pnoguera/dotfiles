@@ -1,98 +1,73 @@
-"
-" PLUGINS VUNDLE
-"
-if has('vim_starting')
-  set nocompatible               " Be iMproved
-endif
+"Minipac
+let minpac_exists=expand('~/.vim/pack/minpac/opt/minpac/README.md')
 
-let vundle_exists=expand('~/.vim/bundle/Vundle.vim/README.md')
-
-if !filereadable(vundle_exists)
+if !filereadable(minpac_exists)
   if !executable("git")
-    echoerr "You have to install curl or first install vim-plug yourself!"
+    echoerr "You have to install curl or first install minpac yourself!"
     execute "q!"
   endif
-  echo "Installing Vundle..."
+  echo "Installing Minpac..."
   echo ""
-  silent !\git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  let g:not_finish_vundle = "yes"
-
-  autocmd VimEnter * PluginInstall
+  silent !\git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
 endif
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plugpac#begin()
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Pack 'k-takata/minpac', {'type': 'opt'}
 
-" Other plugins
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'fatih/vim-go'
-Plugin 'guill/Conque-GDB'
-Plugin 'vimwiki/vimwiki'
-Plugin 'sudar/vim-arduino-syntax'
-Plugin 'buoto/gotests-vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'python-mode/python-mode'
-" Plugin 'edkolev/tmuxline.vim' " tmux status line integration
-Plugin 'tpope/vim-fugitive' " git branch
-Plugin 'godoctor/godoctor.vim' " go refactoring tool
-Plugin 'rodjek/vim-puppet' " puppet plugin
-Plugin 'w0rp/ale' " lint plugin
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets' " lint plugin
-Plugin 'tomasr/molokai' "Color
-"Plugin 'ervandew/supertab'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'Valloric/YouCompleteMe' "autocomplete plugin
-Plugin 'JamshedVesuna/vim-markdown-preview' "markdown plugin
-Plugin 'nazo/pt.vim' "pt searcher plugin
-Plugin 'tpope/vim-surround' "Surrounding plugin
-Plugin 'tpope/vim-unimpaired' "Unimpaired
-Plugin 'aquach/vim-http-client' "HTTP Client
-Plugin 'tpope/vim-commentary' "Add comment with gc
-Plugin 'drewtempelmeyer/palenight.vim' "New colorscheme
-Plugin 'lervag/vimtex' "Latex plugin. https://wikimatze.de/vimtex-the-perfect-tool-for-working-with-tex-and-vim/
-Plugin 'hashivim/vim-terraform' "Terraform integration
-
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+" Plugins
+" 
+" Start
+" Pack 'editorconfig/editorconfig-vim'
+Pack 'scrooloose/nerdtree'
+Pack 'majutsushi/tagbar'
+Pack 'vim-airline/vim-airline'
+Pack 'vim-airline/vim-airline-themes'
+Pack 'ctrlpvim/ctrlp.vim'
+Pack 'tpope/vim-surround' "Surrounding plugin
+Pack 'tpope/vim-unimpaired' "Unimpaired
+Pack 'tpope/vim-commentary' "Add comment with gc
+Pack 'tpope/vim-repeat' "Repeat plugin actions with .
+Pack 'tpope/vim-speeddating' "Repeat plugin actions with .
+Pack 'tpope/vim-dispatch' "Dispatch plugin
+Pack 'jiangmiao/auto-pairs'
+Pack 'nazo/pt.vim' "pt searcher plugin
+Pack 'maralla/completor.vim'
+Pack 'tokorom/completor-shell'
+" Pack 'Shougo/deoplete.nvim'
+" Pack 'Shougo/neosnippet.vim'
 "
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
+" Colorschemes
+Pack 'drewtempelmeyer/palenight.vim'
+Pack 'altercation/vim-colors-solarized', {'type':'opt'}
+Pack 'tomasr/molokai', {'type':'opt'}
 
-" Pathogen load
-filetype off
+" Opt
+" Pack 'fatih/vim-go', {'type':'opt','for': 'go'}
+Pack 'airblade/vim-gitgutter' " shows git diff in the gutter
+Pack 'tpope/vim-fugitive' " git branch
+Pack 'fatih/vim-go'
+Pack 'buoto/gotests-vim'
+Pack 'godoctor/godoctor.vim' " go refactoring tool
+Pack 'w0rp/ale' " lint plugin
+Pack 'rodjek/vim-puppet' " puppet plugin
+" Pack 'python-mode/python-mode'
+Pack 'hashivim/vim-terraform' "Terraform integration
+Pack 'lervag/vimtex' "Latex plugin. https://wikimatze.de/vimtex-the-perfect-tool-for-working-with-tex-and-vim/
+Pack 'SirVer/ultisnips'
+Pack 'honza/vim-snippets' " lint plugin
+Pack 'JamshedVesuna/vim-markdown-preview', {'for': 'markdown'} "markdown plugin
+" Pack 'guill/Conque-GDB'
+Pack 'vimwiki/vimwiki', {'type':'opt'}
+Pack 'sudar/vim-arduino-syntax', {'type':'opt'}
+Pack 'aquach/vim-http-client', {'type': 'opt'} "HTTP Client
 
-call pathogen#infect()
-call pathogen#helptags()
+call plugpac#end()
 
-" basic settings
-filetype plugin indent on
 syntax on
 
 " Color
@@ -163,6 +138,9 @@ if has("autocmd")
   " according to the detected filetype.
   filetype plugin indent on
 
+  " Use the below highlight group when displaying bad whitespace is desired.
+  highlight BadWhitespace ctermbg=red guibg=red
+
   " Enable soft-wrapping for text files
   autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
 
@@ -185,6 +163,36 @@ if has("autocmd")
   autocmd BufWritePost .vimrc source $MYVIMRC
 
   augroup END
+
+
+  " Display tabs at the beginning of a line in Python mode as bad.
+  au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+  " Make trailing whitespace be flagged as bad.
+  au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.pp match BadWhitespace /\s\+$/
+
+  " Wrap text after a certain number of characters
+  " Python: No limit
+  " C: 79
+  " Uncomment this if you want to limit your textwidth in python
+  " can be very annoying ..
+  " au BufRead,BufNewFile *.py,*.pyc set textwidth=79
+  au BufRead,BufNewFile *.c,*.h set textwidth=79
+
+  " Turn off settings in 'formatoptions' relating to comment formatting.
+  " - c : do not automatically insert the comment leader when wrapping based on
+  "    'textwidth'
+  " - o : do not insert the comment leader when using 'o' or 'O' from command mode
+  " - r : do not insert the comment leader when hitting <Enter> in insert mode
+  " Python: not needed
+  " C: prevents insertion of '*' at the beginning of every line in a comment
+  au BufRead,BufNewFile *.c,*.h set formatoptions-=c formatoptions-=o formatoptions-=r
+
+  " Use UNIX (\n) line endings.
+  " Only used for new files so as to not force existing files to change their
+  " line endings.
+  " Python: yes
+  " C: yes
+  au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 
 else
 
@@ -240,68 +248,40 @@ nmap  \m :call ToggleMouse()<CR>
 
 
 " Autocomplete
-" 
+"
 " disable YouCompleteMe tab for avoiding conflict with UltiSnipp
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
+" let g:ycm_key_list_select_completion=[]
+" let g:ycm_key_list_previous_completion=[]
+"
+" Use TAB to complete when typing words, else inserts TABs as usual.  Uses
+" dictionary, source files, and completor to find matching words to complete.
 
+" Note: usual completion is on <C-n> but more trouble to press all the time.
+" Never type the same word twice and maybe learn a new spellings!
+" Use the Linux dictionary when spelling is in doubt.
+function! Tab_Or_Complete() abort
+  " If completor is already open the `tab` cycles through suggested completions.
+  if pumvisible()
+    return "\<C-N>"
+  " If completor is not open and we are in the middle of typing a word then
+  " `tab` opens completor menu.
+  elseif col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    return "\<C-R>=completor#do('complete')\<CR>"
+  else
+    " If we aren't typing a word and we press `tab` simply do the normal `tab`
+    " action.
+    return "\<Tab>"
+  endif
+endfunction
 
+" Use `tab` key to select completions.  Default is arrow keys.
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" Use the below highlight group when displaying bad whitespace is desired.
-highlight BadWhitespace ctermbg=red guibg=red
+" Use tab to trigger auto completion.  Default suggests completions as you type.
+" let g:completor_auto_trigger = 0
+" inoremap <expr> <Tab> Tab_Or_Complete()
 
-" Display tabs at the beginning of a line in Python mode as bad.
-au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
-" Make trailing whitespace be flagged as bad.
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.pp match BadWhitespace /\s\+$/
-
-" Wrap text after a certain number of characters
-" Python: No limit
-" C: 79
-" Uncomment this if you want to limit your textwidth in python
-" can be very annoying ..
-" au BufRead,BufNewFile *.py,*.pyc set textwidth=79
-au BufRead,BufNewFile *.c,*.h set textwidth=79
-
-" Turn off settings in 'formatoptions' relating to comment formatting.
-" - c : do not automatically insert the comment leader when wrapping based on
-"    'textwidth'
-" - o : do not insert the comment leader when using 'o' or 'O' from command mode
-" - r : do not insert the comment leader when hitting <Enter> in insert mode
-" Python: not needed
-" C: prevents insertion of '*' at the beginning of every line in a comment
-au BufRead,BufNewFile *.c,*.h set formatoptions-=c formatoptions-=o formatoptions-=r
-
-" Use UNIX (\n) line endings.
-" Only used for new files so as to not force existing files to change their
-" line endings.
-" Python: yes
-" C: yes
-au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
-
-
-" ----------------------------------------------------------------------------
-" The following section contains suggested settings.  While in no way required
-" to meet coding standards, they are helpful.
-
-
-" Puts a marker at the beginning of the file to differentiate between UTF and
-" UCS encoding (WARNING: can trick shells into thinking a text file is actually
-" a binary file when executing the text file): ``set bomb``
-
-
-""""""""""""""""""""""""""""""""
-" END http://svn.python.org/projects/python/trunk/Misc/Vim/vimrc
-""""""""""""""""""""""""""""""""
-
-filetype on
-filetype plugin on
-"set iskeyword+=.
-
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 
 " Markdown preview key
@@ -311,6 +291,8 @@ let vim_markdown_preview_hotkey='<C-o>'
 " let g:vimtex_view_general_viewer = "evince"
 let g:vimtex_view_method = 'zathura'
 
+" Completor
+let g:completor_python_binary = '/usr/bin/python3'
 
 " always trim trailing whitespace .. is there ever a good reason?
 " autocmd BufWritePre * :%s/\s\+$//e

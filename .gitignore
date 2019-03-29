@@ -10,5 +10,6 @@ git/gitconfig.symlink
 vim/vim.symlink/.netrwhist
 *.pyc
 vim/vim.symlink/bundle/*
+vim/vim.symlink/pack/minpac/
 tmux/tmux.symlink/plugins/
 tmux/tmux.symlink/resurrect/
