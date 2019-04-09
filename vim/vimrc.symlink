@@ -35,8 +35,9 @@ Pack 'tpope/vim-speeddating' "Repeat plugin actions with .
 Pack 'tpope/vim-dispatch' "Dispatch plugin
 Pack 'jiangmiao/auto-pairs'
 Pack 'nazo/pt.vim' "pt searcher plugin
-Pack 'maralla/completor.vim'
+Pack 'maralla/completor.vim' "Autocomplete plugin
 Pack 'tokorom/completor-shell'
+Pack 'tpope/vim-projectionist'
 " Pack 'Shougo/deoplete.nvim'
 " Pack 'Shougo/neosnippet.vim'
 "
@@ -46,18 +47,18 @@ Pack 'drewtempelmeyer/palenight.vim'
 Pack 'altercation/vim-colors-solarized', {'type':'opt'}
 Pack 'tomasr/molokai', {'type':'opt'}
 
-" Opt
-" Pack 'fatih/vim-go', {'type':'opt','for': 'go'}
+" Programming
+Pack 'w0rp/ale' " lint plugin
 Pack 'airblade/vim-gitgutter' " shows git diff in the gutter
 Pack 'tpope/vim-fugitive' " git branch
 Pack 'fatih/vim-go'
-Pack 'buoto/gotests-vim'
-Pack 'godoctor/godoctor.vim' " go refactoring tool
-Pack 'w0rp/ale' " lint plugin
+Pack 'buoto/gotests-vim', {'for': 'go'} 
+Pack 'godoctor/godoctor.vim', {'for': 'go'} " go refactoring tool
 Pack 'rodjek/vim-puppet' " puppet plugin
 " Pack 'python-mode/python-mode'
-Pack 'hashivim/vim-terraform' "Terraform integration
-Pack 'lervag/vimtex' "Latex plugin. https://wikimatze.de/vimtex-the-perfect-tool-for-working-with-tex-and-vim/
+Pack 'tell-k/vim-autopep8', {'for': 'python'}" Autopep8 for python
+Pack 'hashivim/vim-terraform', {'for': 'terraform'}  "Terraform integration
+Pack 'lervag/vimtex' , {'for': 'tex'} "Latex plugin. https://wikimatze.de/vimtex-the-perfect-tool-for-working-with-tex-and-vim/
 Pack 'SirVer/ultisnips'
 Pack 'honza/vim-snippets' " lint plugin
 Pack 'JamshedVesuna/vim-markdown-preview', {'for': 'markdown'} "markdown plugin
