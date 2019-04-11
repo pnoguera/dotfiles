@@ -295,6 +295,12 @@ let g:vimtex_view_method = 'zathura'
 " Completor
 let g:completor_python_binary = '/usr/bin/python3'
 
+" Terminal
+if has('terminal')
+    tnoremap <Esc> <C-\><C-n>
+    tnoremap <C-v><Esc> <Esc>
+endif
+
 " always trim trailing whitespace .. is there ever a good reason?
 " autocmd BufWritePre * :%s/\s\+$//e
 
