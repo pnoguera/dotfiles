@@ -158,7 +158,7 @@ bind -n S-Right next-window
 bind Space next-layout
 
 # toggle mouse
-bind m run "cut -c3- ~/.tmux.conf | sh -s toggle_mouse"
+bind m run "tmux show -g mouse |grep -q off && (tmux set -g mouse on && tmux display-message 'mouse on') || (tmux set -g mouse off && tmux display-message 'mouse off')"
 
 # confirm before killing a window or the server
 bind-key k confirm kill-window
