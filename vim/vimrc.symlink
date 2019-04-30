@@ -38,6 +38,7 @@ Pack 'nazo/pt.vim' "pt searcher plugin
 Pack 'maralla/completor.vim' "Autocomplete plugin
 Pack 'tokorom/completor-shell'
 Pack 'tpope/vim-projectionist'
+Pack 'junegunn/limelight.vim'
 " Pack 'Shougo/deoplete.nvim'
 " Pack 'Shougo/neosnippet.vim'
 "
@@ -305,6 +306,11 @@ if has('terminal')
     tnoremap <Esc> <C-\><C-n>
     tnoremap <C-v><Esc> <Esc>
 endif
+
+"Limelight
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
 
 " always trim trailing whitespace .. is there ever a good reason?
 " autocmd BufWritePre * :%s/\s\+$//e
