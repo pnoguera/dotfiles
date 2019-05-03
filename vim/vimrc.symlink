@@ -120,9 +120,12 @@ set visualbell
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-" Error and warning signs.
+" Ale defaults
 let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
+let g:ale_lint_on_text_changed = 'never'
+"let g:ale_lint_on_enter = 0
+
 
 " delete trailing whitespace on save
 func! DeleteTrailingWS()
