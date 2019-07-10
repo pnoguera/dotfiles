@@ -69,6 +69,8 @@ if [ ! -z $TMUX ]; then
     export TMUX_POWERLINE_SEG_WEATHER_LOCATION=638242
 fi
 
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
 #
 # AUTOCOMPLETION
 #
