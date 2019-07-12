@@ -64,7 +64,7 @@ Pack 'SirVer/ultisnips'
 Pack 'honza/vim-snippets' " lint plugin
 Pack 'JamshedVesuna/vim-markdown-preview', {'for': 'markdown'} "markdown plugin
 " Pack 'guill/Conque-GDB'
-Pack 'vimwiki/vimwiki', {'type':'opt'}
+Pack 'vimwiki/vimwiki'
 Pack 'sudar/vim-arduino-syntax', {'type':'opt'}
 Pack 'aquach/vim-http-client', {'type': 'opt'} "HTTP Client
 
