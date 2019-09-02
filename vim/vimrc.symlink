@@ -41,7 +41,6 @@ Pack 'tpope/vim-projectionist'
 Pack 'junegunn/limelight.vim'
 " Pack 'Shougo/deoplete.nvim'
 " Pack 'Shougo/neosnippet.vim'
-"
 
 " Colorschemes
 Pack 'drewtempelmeyer/palenight.vim'
@@ -54,14 +53,15 @@ Pack 'airblade/vim-gitgutter' " shows git diff in the gutter
 Pack 'tpope/vim-fugitive' " git branch
 Pack 'fatih/vim-go'
 Pack 'buoto/gotests-vim', {'for': 'go'} 
-Pack 'godoctor/godoctor.vim', {'for': 'go'} " go refactoring tool
+" Pack 'godoctor/godoctor.vim', {'for': 'go'} " go refactoring tool
 Pack 'rodjek/vim-puppet' " puppet plugin
 " Pack 'python-mode/python-mode'
-Pack 'tell-k/vim-autopep8', {'for': 'python'}" Autopep8 for python
+Pack 'tell-k/vim-autopep8', {'for': 'python'} "Autopep8 for python
 Pack 'hashivim/vim-terraform', {'for': 'terraform'}  "Terraform integration
+Pack 'juliosueiras/vim-terraform-completion', {'for': 'terraform'}  "Terraform completion
 Pack 'lervag/vimtex' , {'for': 'tex'} "Latex plugin. https://wikimatze.de/vimtex-the-perfect-tool-for-working-with-tex-and-vim/
 Pack 'SirVer/ultisnips'
-Pack 'honza/vim-snippets' " lint plugin
+Pack 'honza/vim-snippets' "snippets
 Pack 'JamshedVesuna/vim-markdown-preview', {'for': 'markdown'} "markdown plugin
 " Pack 'guill/Conque-GDB'
 Pack 'vimwiki/vimwiki'
