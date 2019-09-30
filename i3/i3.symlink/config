@@ -170,7 +170,9 @@ bar {
     }
     # i3bar position
     position top
-    status_command i3status -c ~/.i3/i3status.conf
+    status_command ~/go/bin/yagostatus --config ~/.i3/yagostatus.yml
+    # status_command ~/go/bin/yagostatus --config ~/.i3/yagostatus.yml  2> /tmp/yagostatus.log
+    # status_command i3status -c ~/.i3/i3status.conf
     #status_command i3blocks
 }
 

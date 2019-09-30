@@ -1,0 +1,50 @@
+widgets:
+  # - widget: static
+  #   blocks: >
+  #     [
+  #       {
+  #         "full_text": "YaGoStatus",
+  #         "color": "#2e9ef4"
+  #       }
+  #     ]
+  #   events:
+  #     - button: 1
+  #       command: xdg-open https://github.com/burik666/yagostatus/
+
+  - widget: wrapper
+    command: /usr/bin/conky -c /home/pablo/.i3/conky.conf
+    events:
+      - button: 1
+        name: cpu
+        command: gnome-terminal -- top
+
+  - widget: static
+    blocks: >
+      [{"full_text": "🔊", "separator": false}]
+    events:
+      - button: 1
+        command: pavucontrol
+
+  - widget: exec
+    command: amixer sget Master |awk -F"[][]" '/dB/ { if ($6 == "on") print $2; else print "muted" }'
+    interval: 1
+    events_update: true
+    template: >
+        {
+            "markup": "pango",
+            "separator": true,
+            "separator_block_width": 20
+        }
+
+  # - widget: wrapper
+  #   command: /usr/bin/i3status -c ~/.i3/i3status.conf
+
+  - widget: clock
+    # format: Jan _2 Mon 15:04:05 # https://golang.org/pkg/time/#Time.Format
+    format:   Jan _2 Mon 🕐15:04:05
+    template: >
+        {
+            "color": "#ffffff",
+            "separator": true,
+            "separator_block_width": 20
+        }
