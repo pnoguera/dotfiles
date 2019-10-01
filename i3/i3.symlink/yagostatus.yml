@@ -36,8 +36,8 @@ widgets:
             "separator_block_width": 20
         }
 
-  # - widget: wrapper
-  #   command: /usr/bin/i3status -c ~/.i3/i3status.conf
+  - widget: wrapper
+    command: /usr/bin/i3status -c ~/.i3/i3status-bat.conf
 
   - widget: clock
     # format: Jan _2 Mon 15:04:05 # https://golang.org/pkg/time/#Time.Format
