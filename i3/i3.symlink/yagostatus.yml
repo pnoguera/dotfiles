@@ -26,7 +26,7 @@ widgets:
         command: pavucontrol
 
   - widget: exec
-    command: amixer sget Master |awk -F"[][]" '/dB/ { if ($6 == "on") print $2; else print "muted" }'
+    command: amixer sget Master |awk -F"[][]" '/dB/ { if ($6 == "on") print "[{\"full_text\":\"",$2,"\"}]"; else print "muted" }'
     interval: 1
     events_update: true
     template: >
