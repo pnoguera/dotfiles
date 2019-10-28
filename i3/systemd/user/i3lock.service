@@ -7,7 +7,7 @@ Before=sleep.target
 [Service]
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/i3lock -i /home/pablo/.i3/lock.png -c 141414 && sleep 1 
+ExecStart=/usr/bin/i3lock -i /home/pablo/.i3/lock.png -c 141414 && sleep 1
 
 [Install]
-WantedBy=suspend.target
+WantedBy=sleep.target
