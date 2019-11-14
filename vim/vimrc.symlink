@@ -317,7 +317,10 @@ let g:limelight_conceal_ctermfg = 240
 
 " always trim trailing whitespace .. is there ever a good reason?
 " autocmd BufWritePre * :%s/\s\+$//e
-
+"
+" gohtml template
+au BufRead,BufNewFile *.gohtml set filetype=gohtmltmpl
+"
 " for things that are particular to this user/computer,
 " you can add commands to a .local_vim file in your home dir
 " and uncommenting the following
