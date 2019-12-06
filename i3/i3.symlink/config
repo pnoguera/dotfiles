@@ -46,7 +46,7 @@ bindsym $mod+d exec dmenu_run
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
-bindsym $mod+ö focus right
+bindsym $mod+odiaeresis focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -119,6 +119,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 # move focused workspaces
 bindsym $mod+m move workspace to output left
 bindsym $mod+Shift+m move workspace to output right
+bindsym $mod+n move workspace to output up
+bindsym $mod+Shift+n move workspace to output down
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
