@@ -18,5 +18,8 @@ map <F6> :Intpyrun<CR>
 map <F7> :TaskList<CR>
 nnoremap <silent> <F8> :TagbarToggle<CR>
 
+set iskeyword+=.
+set keywordprg=python3\ -m\ pydoc
+
 set colorcolumn=80  " highlight column 80
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
