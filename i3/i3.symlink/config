@@ -216,6 +216,14 @@ bindsym --release Ctrl+Shift+Print exec /usr/bin/gnome-screenshot -a -c
 # Power management
 set $Docker ~/.i3/docker.sh
 
+# Teams Notification Hack
+no_focus [title="Microsoft Teams Notification"]
+for_window [title="Microsoft Teams Notification" class="microsoft teams - preview"] floating enable
+for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] floating enable
+
+# Gnome Calculator
+for_window [title="Calculator"] floating enable
+
 # Locker
 set $Locker i3lock -i ~/.i3/lock.png -c 141414 && sleep 1
 bindsym ctrl+$mod+l exec $Locker
