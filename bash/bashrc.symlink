@@ -108,5 +108,12 @@ alias weather='curl http://wttr.in/Berlin'
 # go
 [ -d /usr/local/go ] && export PATH=/usr/local/go/bin:$PATH
 
+# bash-my-aws
+if [ -d ~/.bash-my-aws ]; then
+    export PATH="$PATH:$HOME/.bash-my-aws/bin"
+    source ~/.bash-my-aws/aliases
+    source ~/.bash-my-aws/bash_completion.sh
+fi
+
 # bash.local
 [ -f ~/.bash.local ] && source ~/.bash.local
