@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
 # Install font required for the status bar
-sudo apt-get install fonts-font-awesome conky parcellite
+sudo apt-get install fonts-font-awesome \
+                     conky \
+                     parcellite \
+                     xss-lock \
+                     feh
 
 # yagostatus
 echo "Installing yagostatus bar"
