@@ -6,6 +6,7 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-resurrect' 
 set -g @plugin 'tmux-plugins/tmux-continuum' # Save tmux on restart
 set -g @plugin 'tmux-plugins/tmux-battery'
+set -g @plugin 'Morantron/tmux-fingers'
 
 # -- general -------------------------------------------------------------------
 
@@ -217,6 +218,9 @@ bind -T copy-mode-vi L send-keys -X  end-of-line
 
 # copy to Mac OSX pasteboard
 if 'which -s reattach-to-user-namespace' 'bind y run "tmux save-buffer - | reattach-to-user-namespace pbcopy"'
+
+# tmux fingers configuration
+set -g @fingers-pattern-0 '{(.*)}'
 
 
 # -- user defined --------------------------------------------------------------
