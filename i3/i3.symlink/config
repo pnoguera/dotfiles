@@ -184,10 +184,9 @@ exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ss
 exec --no-startup-id parcellite
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec_always --no-startup-id feh --bg-scale ~/.i3/wallpaper.jpg
+exec_always --no-startup-id /usr/bin/xss-lock -- /usr/bin/i3lock -i /home/pablo/.i3/lock.png -c 141414 &
 exec_always --no-startup-id "setxkbmap -model pc104 -layout de,us -variant ,, -option grp:alt_shift_toggle"
 exec_always --no-startup-id "setxkbmap -option ctrl:nocaps"
-exec_always --no-statup-id "~/.i3/start-gnome-keyring.sh"
-
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+1 i3blocks #increase sound volume
