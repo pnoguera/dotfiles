@@ -58,6 +58,7 @@ Pack 'rodjek/vim-puppet' " puppet plugin
 " Pack 'python-mode/python-mode'
 Pack 'tell-k/vim-autopep8', {'for': 'python'} "Autopep8 for python
 Pack 'psf/black', {'for': 'python'} "Python code formatter
+Pack 'fatih/vim-hclfmt', {'for':'terraform'}  "HCL format code
 Pack 'hashivim/vim-terraform'  "Terraform integration
 Pack 'juliosueiras/vim-terraform-completion', {'for': 'terraform'}  "Terraform completion
 Pack 'lervag/vimtex' , {'for': 'tex'} "Latex plugin. https://wikimatze.de/vimtex-the-perfect-tool-for-working-with-tex-and-vim/
