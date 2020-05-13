@@ -5,6 +5,7 @@ sudo apt-get install fonts-font-awesome \
                      conky \
                      parcellite \
                      xss-lock \
+                     suckless-tools \
                      feh
 
 # yagostatus
