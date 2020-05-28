@@ -41,6 +41,7 @@ let g:go_highlight_build_constraints = 1
 " Use gopls
  let g:go_def_mode='gopls'
  let g:go_info_mode='gopls'
+ let ale_linters = {'go': ['gopls'],}
 
 " Highlight variables and others that are the same
 let g:go_auto_sameids = 1
@@ -50,6 +51,9 @@ let g:go_auto_type_info = 1
 
 " Automatic go imports
 let g:go_fmt_command = "goimports"
+
+" conflict with ale
+let g:go_fmt_fail_silently = 1
 
 set noexpandtab
 set shiftwidth=4
@@ -84,3 +88,6 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
+
+" Autocomplete
+let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls'}
