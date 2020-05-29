@@ -16,11 +16,9 @@ filetype off                  " required
 
 call plugpac#begin()
 
-Pack 'k-takata/minpac', {'type': 'opt'}
-
 " Plugins
-" 
 " Start
+Pack 'k-takata/minpac', {'type': 'opt'} "minimal package manager
 " Pack 'editorconfig/editorconfig-vim'
 Pack 'scrooloose/nerdtree'
 Pack 'majutsushi/tagbar'
@@ -33,14 +31,10 @@ Pack 'tpope/vim-commentary' "Add comment with gc
 Pack 'tpope/vim-repeat' "Repeat plugin actions with .
 Pack 'tpope/vim-speeddating' "Repeat plugin actions with .
 Pack 'tpope/vim-dispatch' "Dispatch plugin
+Pack 'tpope/vim-projectionist'
 Pack 'jiangmiao/auto-pairs'
 Pack 'nazo/pt.vim' "pt searcher plugin
-Pack 'maralla/completor.vim' "Autocomplete plugin
-Pack 'tokorom/completor-shell'
-Pack 'tpope/vim-projectionist'
 Pack 'junegunn/limelight.vim'
-" Pack 'Shougo/deoplete.nvim'
-" Pack 'Shougo/neosnippet.vim'
 
 " Colorschemes
 Pack 'drewtempelmeyer/palenight.vim'
@@ -56,9 +50,10 @@ Pack 'buoto/gotests-vim', {'for': 'go'}
 " Pack 'godoctor/godoctor.vim', {'for': 'go'} " go refactoring tool
 Pack 'rodjek/vim-puppet' " puppet plugin
 " Pack 'python-mode/python-mode'
+Pack 'davidhalter/jedi-vim', {'for': 'python'} "Python code formatter
 Pack 'tell-k/vim-autopep8', {'for': 'python'} "Autopep8 for python
 Pack 'psf/black', {'for': 'python'} "Python code formatter
-Pack 'fatih/vim-hclfmt', {'for':'terraform'}  "HCL format code
+" Pack 'fatih/vim-hclfmt', {'for':'terraform'}  "HCL format code
 Pack 'hashivim/vim-terraform'  "Terraform integration
 Pack 'juliosueiras/vim-terraform-completion', {'for': 'terraform'}  "Terraform completion
 Pack 'lervag/vimtex' , {'for': 'tex'} "Latex plugin. https://wikimatze.de/vimtex-the-perfect-tool-for-working-with-tex-and-vim/
@@ -96,13 +91,12 @@ set hidden          " Hide buffers when they are abandoned
 set mouse=a		    " Enable mouse usage all modes
 set guioptions+=a   " Enable x11 copy from visual select
 set showmatch
+set modeline
+set hlsearch
 
 " Show whitespace
 set list
 set listchars=tab:→\ ,trail:~,extends:>,precedes:<
-
-" For full syntax highlighting:
-let python_highlight_all=1
 
 " Folding based on indentation:
 set foldmethod=indent
@@ -202,6 +196,9 @@ if has("autocmd")
   " C: yes
   au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 
+  " Open Tagbar when supported
+  autocmd FileType * :call tagbar#autoopen(0)
+
 else
 
   set autoindent		" always set autoindenting on
@@ -231,10 +228,6 @@ let g:UltiSnipsExpandTrigger="<Tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
 " Folding
 nnoremap <space> za
 vnoremap <space> zf
@@ -260,52 +253,12 @@ if &term =~ '^screen'
     set ttymouse=xterm2
 endif
 
-" Autocomplete
-"
-" disable YouCompleteMe tab for avoiding conflict with UltiSnipp
-" let g:ycm_key_list_select_completion=[]
-" let g:ycm_key_list_previous_completion=[]
-"
-" Use TAB to complete when typing words, else inserts TABs as usual.  Uses
-" dictionary, source files, and completor to find matching words to complete.
-
-" Note: usual completion is on <C-n> but more trouble to press all the time.
-" Never type the same word twice and maybe learn a new spellings!
-" Use the Linux dictionary when spelling is in doubt.
-function! Tab_Or_Complete() abort
-  " If completor is already open the `tab` cycles through suggested completions.
-  if pumvisible()
-    return "\<C-N>"
-  " If completor is not open and we are in the middle of typing a word then
-  " `tab` opens completor menu.
-  elseif col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-    return "\<C-R>=completor#do('complete')\<CR>"
-  else
-    " If we aren't typing a word and we press `tab` simply do the normal `tab`
-    " action.
-    return "\<Tab>"
-  endif
-endfunction
-
-" Use `tab` key to select completions.  Default is arrow keys.
-" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Use tab to trigger auto completion.  Default suggests completions as you type.
-" let g:completor_auto_trigger = 0
-" inoremap <expr> <Tab> Tab_Or_Complete()
-
-
-
 " Markdown preview key
 let vim_markdown_preview_hotkey='<C-o>'
 
 " Latex viewer
 " let g:vimtex_view_general_viewer = "evince"
 let g:vimtex_view_method = 'zathura'
-
-" Completor
-let g:completor_python_binary = '/usr/bin/python3'
 
 " Terminal
 if has('terminal')

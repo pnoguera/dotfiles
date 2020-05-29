@@ -88,6 +88,3 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
-
-" Autocomplete
-let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls'}
