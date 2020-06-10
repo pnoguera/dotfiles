@@ -1,0 +1,6 @@
+[Unit]
+Description=Go Language Server Per-Connection Server
+
+[Service]
+ExecStart=-/home/pablo/go/bin/gopls serve
+StandardInput=socket

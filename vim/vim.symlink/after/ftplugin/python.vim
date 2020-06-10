@@ -6,15 +6,9 @@ set et
 " For full syntax highlighting:
 let python_highlight_all=1
 
-let g:ale_linters = {
-            \'python': ['flake8'] ,
-            \}
-
 command! Pyrun execute "!python3 %"
 command! Intpyrun execute "!ipython3 -i %"
 
 map <F4> :call Autopep8()<CR>
 map <F5> :Pyrun<CR>
 map <F6> :Intpyrun<CR>
-map <F7> :TaskList<CR>
-nnoremap <silent> <F8> :TagbarToggle<CR>

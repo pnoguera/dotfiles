@@ -1,77 +1,4 @@
-"Minipac
-let minpac_exists=expand('~/.vim/pack/minpac/opt/minpac/README.md')
-
-if !filereadable(minpac_exists)
-  if !executable("git")
-    echoerr "You have to install curl or first install minpac yourself!"
-    execute "q!"
-  endif
-  echo "Installing Minpac..."
-  echo ""
-  silent !\git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
-endif
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-call plugpac#begin()
-
-" Plugins
-" Start
-Pack 'k-takata/minpac', {'type': 'opt'} "minimal package manager
-" Pack 'editorconfig/editorconfig-vim'
-Pack 'scrooloose/nerdtree'
-Pack 'majutsushi/tagbar'
-Pack 'vim-airline/vim-airline'
-Pack 'vim-airline/vim-airline-themes'
-Pack 'ctrlpvim/ctrlp.vim'
-Pack 'tpope/vim-surround' "Surrounding plugin
-Pack 'tpope/vim-unimpaired' "Unimpaired
-Pack 'tpope/vim-commentary' "Add comment with gc
-Pack 'tpope/vim-repeat' "Repeat plugin actions with .
-Pack 'tpope/vim-speeddating' "Repeat plugin actions with .
-Pack 'tpope/vim-dispatch' "Dispatch plugin
-Pack 'tpope/vim-projectionist'
-Pack 'jiangmiao/auto-pairs'
-Pack 'nazo/pt.vim' "pt searcher plugin
-Pack 'junegunn/limelight.vim'
-
-" Colorschemes
-Pack 'drewtempelmeyer/palenight.vim'
-Pack 'altercation/vim-colors-solarized', {'type':'opt'}
-Pack 'tomasr/molokai', {'type':'opt'}
-
-" Programming
-Pack 'w0rp/ale' " lint plugin
-Pack 'airblade/vim-gitgutter' " shows git diff in the gutter
-Pack 'tpope/vim-fugitive' " git branch
-Pack 'fatih/vim-go'
-Pack 'buoto/gotests-vim', {'for': 'go'} 
-" Pack 'godoctor/godoctor.vim', {'for': 'go'} " go refactoring tool
-Pack 'rodjek/vim-puppet' " puppet plugin
-" Pack 'python-mode/python-mode'
-Pack 'davidhalter/jedi-vim', {'for': 'python'} "Python code formatter
-Pack 'tell-k/vim-autopep8', {'for': 'python'} "Autopep8 for python
-Pack 'psf/black', {'for': 'python'} "Python code formatter
-" Pack 'fatih/vim-hclfmt', {'for':'terraform'}  "HCL format code
-Pack 'hashivim/vim-terraform'  "Terraform integration
-Pack 'juliosueiras/vim-terraform-completion', {'for': 'terraform'}  "Terraform completion
-Pack 'lervag/vimtex' , {'for': 'tex'} "Latex plugin. https://wikimatze.de/vimtex-the-perfect-tool-for-working-with-tex-and-vim/
-Pack 'SirVer/ultisnips'
-Pack 'honza/vim-snippets' "snippets
-Pack 'JamshedVesuna/vim-markdown-preview', {'for': 'markdown'} "markdown plugin
-" Pack 'guill/Conque-GDB'
-Pack 'vimwiki/vimwiki'
-Pack 'sudar/vim-arduino-syntax', {'type':'opt'}
-Pack 'aquach/vim-http-client', {'type': 'opt'} "HTTP Client
-
-call plugpac#end()
-
 syntax on
-
-" Color
-colorscheme palenight
-" highlight Normal ctermbg=none
 
 " Set the default file encoding to UTF-8:
 set encoding=utf-8
@@ -93,191 +20,101 @@ set guioptions+=a   " Enable x11 copy from visual select
 set showmatch
 set modeline
 set hlsearch
-
-" Show whitespace
+set complete+=kspell
 set list
-set listchars=tab:→\ ,trail:~,extends:>,precedes:<
-
-" Folding based on indentation:
-set foldmethod=indent
+set listchars=tab:→\ ,trail:~,extends:>,precedes:< " Show whitespace
+set foldmethod=indent " Folding based on indentation
 set nofoldenable
-
-" I like hitting tab and getting two spaces
-autocmd BufRead,BufNewFile *.js,*.html,*.css set softtabstop=2
-
 "set cursorline
 set laststatus=2
-
-" no beeps
-set visualbell
+set visualbell " no beeps
 "set ruler
-"
-" airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-
-" Ale defaults
-let g:ale_sign_error = '⤫'
-let g:ale_sign_warning = '⚠'
-let g:ale_lint_on_text_changed = 'never'
-let g:airline#extensions#ale#enabled = 1
-"let g:ale_lint_on_enter = 0
+set dictionary=/usr/share/dict/words
 
 
-" delete trailing whitespace on save
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-autocmd BufWrite *.htm,*.html,*.css,*.js,*.php :call DeleteTrailingWS()
-
-
-if has("autocmd")
-  " Set File type to 'text' for files ending in .txt
-  autocmd BufNewFile,BufRead *.txt setfiletype text
-  " Uncomment the following to have Vim load indentation rules and plugins
-  " according to the detected filetype.
-  filetype plugin indent on
-
-  " Use the below highlight group when displaying bad whitespace is desired.
-  highlight BadWhitespace ctermbg=red guibg=red
-
-  " Enable soft-wrapping for text files
-  autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  " autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
-  " Automatically load .vimrc source when saved
-  autocmd BufWritePost .vimrc source $MYVIMRC
-
-  augroup END
-
-
-  " Display tabs at the beginning of a line in Python mode as bad.
-  au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
-  " Make trailing whitespace be flagged as bad.
-  au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.pp match BadWhitespace /\s\+$/
-
-  " Wrap text after a certain number of characters
-  " Python: No limit
-  " C: 79
-  " Uncomment this if you want to limit your textwidth in python
-  " can be very annoying ..
-  " au BufRead,BufNewFile *.py,*.pyc set textwidth=79
-  au BufRead,BufNewFile *.c,*.h set textwidth=79
-
-  " Turn off settings in 'formatoptions' relating to comment formatting.
-  " - c : do not automatically insert the comment leader when wrapping based on
-  "    'textwidth'
-  " - o : do not insert the comment leader when using 'o' or 'O' from command mode
-  " - r : do not insert the comment leader when hitting <Enter> in insert mode
-  " Python: not needed
-  " C: prevents insertion of '*' at the beginning of every line in a comment
-  au BufRead,BufNewFile *.c,*.h set formatoptions-=c formatoptions-=o formatoptions-=r
-
-  " Use UNIX (\n) line endings.
-  " Only used for new files so as to not force existing files to change their
-  " line endings.
-  " Python: yes
-  " C: yes
-  au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
-
-  " Open Tagbar when supported
-  autocmd FileType * :call tagbar#autoopen(0)
-
-else
-
-  set autoindent		" always set autoindenting on
-
-endif " has("autocmd")
-
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-
-map <F9> :NERDTreeToggle<CR>
-nnoremap <leader>a :cclose<CR>
-"map <C-n> :MBEbn<CR>
-"map <C-p> :MBEbp<CR>
+""""""""""""""""""""""""""""""""
+"""""      Key Mappings    """""
+""""""""""""""""""""""""""""""""
 
 " Buffer cycle
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
-
-" Snippets
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<Tab>"
-" let g:UltiSnipsJumpForwardTrigger="<c-m>" "default C-j"
-" let g:UltiSnipsJumpBackwardTrigger="<c-n>" "default C-k"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
 " Folding
 nnoremap <space> za
 vnoremap <space> zf
 " unmap space in selection mode for snippets
 sunmap <space>
 
-" Toggle mouse
-function! ToggleMouse()
-    " check if mouse is enabled
-    if &mouse == 'a'
-        " disable mouse
-        set mouse=c
+" tag browser
+nmap <F8> :TagbarToggle<CR>
+
+
+" Workaroung for gx not working
+" https://github.com/vim/vim/issues/4738
+let g:netrw_nogx = 1
+function! OpenUrlUnderCursor()
+    execute "normal BvEy"
+    let url=matchstr(@0, '[a-z]*:\/\/[^ >,;]*')
+    if url != ""
+        silent exec "!xdg-open '".url."'" | redraw! 
+        echo "opened ".url
     else
-        " enable mouse everywhere
-        set mouse=a
+        echo "No URL under cursor."
     endif
-endfunc
-nmap  \m :call ToggleMouse()<CR>
+endfunction
+nmap gx :call OpenUrlUnderCursor()<CR>
 
-set mouse+=a
-if &term =~ '^screen'
-    " tmux knows the extended mouse mode
-    set ttymouse=xterm2
+
+" Automatically install vim-plug and run PlugInstall if vim-plug is not found.
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Markdown preview key
-let vim_markdown_preview_hotkey='<C-o>'
+" Initialize vim-plug.
+call plug#begin('~/.vim/plugged')
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp' "use language servers
+Plug 'mattn/vim-lsp-settings' "installs language servers (npm is a requirement)
+Plug 'prabirshrestha/asyncomplete.vim' "autocomplete
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete-ultisnips.vim' "autocomplete
+Plug 'prabirshrestha/asyncomplete-emoji.vim' "autocomplete
+Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets' "snippets
 
-" Latex viewer
-" let g:vimtex_view_general_viewer = "evince"
-let g:vimtex_view_method = 'zathura'
-
-" Terminal
-if has('terminal')
-    tnoremap <Esc> <C-\><C-n>
-    tnoremap <C-v><Esc> <Esc>
-endif
-
-"Limelight
-" Color name (:help cterm-colors) or ANSI code
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-
-" always trim trailing whitespace .. is there ever a good reason?
-" autocmd BufWritePre * :%s/\s\+$//e
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround' "Surrounding plugin
+Plug 'tpope/vim-unimpaired' "Unimpaired
+Plug 'tpope/vim-commentary' "Add comment with gc
+Plug 'tpope/vim-repeat' "Repeat plugin actions with .
+Plug 'tpope/vim-speeddating' "Repeat plugin actions with .
+Plug 'tpope/vim-dispatch' "Dispatch plugin
+Plug 'tpope/vim-projectionist'
+Plug 'jiangmiao/auto-pairs'
+Plug 'nazo/pt.vim' "pt searcher plugin
+" Plug 'junegunn/limelight.vim'
 "
-" gohtml template
-au BufRead,BufNewFile *.gohtml set filetype=gohtmltmpl
 "
-" for things that are particular to this user/computer,
-" you can add commands to a .local_vim file in your home dir
-" and uncommenting the following
-" source .local_vim"
+Plug 'drewtempelmeyer/palenight.vim'
+
+Plug 'airblade/vim-gitgutter' " shows git diff in the gutter
+Plug 'tpope/vim-fugitive' " git branch
+Plug 'fatih/vim-go'
+Plug 'buoto/gotests-vim', {'for': 'go'} 
+Plug 'sheerun/vim-polyglot'
+Plug 'dense-analysis/ale'
+Plug 'buoto/gotests-vim', {'for': 'go'} 
+Plug 'JamshedVesuna/vim-markdown-preview', {'for': 'markdown'} "markdown plugin
+Plug 'vimwiki/vimwiki'
+Plug 'lervag/vimtex' , {'for': 'tex'} "Latex plugin. https://wikimatze.de/vimtex-the-perfect-tool-for-working-with-tex-and-vim/"
+Plug 'majutsushi/tagbar' "tag browser
+"Plug 'tell-k/vim-autopep8', {'for': 'python'} "Autopep8 for python  "
+
+call plug#end()
+
+colorscheme palenight
