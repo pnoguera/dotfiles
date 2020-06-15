@@ -2,8 +2,8 @@
 Description=Go Language Server Socket for Per-Connection Servers
 
 [Socket]
-ListenStream=25000
-Accept=yes
+ListenStream=127.0.0.1:25000
+Accept=No
 
 [Install]
 WantedBy=sockets.target

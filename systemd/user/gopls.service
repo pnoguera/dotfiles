@@ -2,5 +2,5 @@
 Description=Go Language Server Per-Connection Server
 
 [Service]
-ExecStart=-/home/pablo/go/bin/gopls serve
+ExecStart=-/home/pablo/go/bin/gopls -remote=auto -listen.timeout 60s
 StandardInput=socket
