@@ -6,7 +6,7 @@ let g:lsp_signs_hint = {'text':'️️️I'} " icons require GUI
 let g:lsp_highlight_references_enabled = 1
 
 let g:lsp_settings = {
-\  'go': {'cmd': ['clangd-6.0','--remote="127.0.0.1:25000"']},
+\  'go': {'cmd': ['gopls','--remote="127.0.0.1:25000"']},
 \}
 
 function! s:on_lsp_buffer_enabled() abort

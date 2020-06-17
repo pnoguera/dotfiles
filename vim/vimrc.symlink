@@ -113,7 +113,7 @@ Plug 'JamshedVesuna/vim-markdown-preview', {'for': 'markdown'} "markdown plugin
 Plug 'vimwiki/vimwiki'
 Plug 'lervag/vimtex' , {'for': 'tex'} "Latex plugin. https://wikimatze.de/vimtex-the-perfect-tool-for-working-with-tex-and-vim/"
 Plug 'majutsushi/tagbar' "tag browser
-"Plug 'tell-k/vim-autopep8', {'for': 'python'} "Autopep8 for python  "
+Plug 'tell-k/vim-autopep8', {'for': 'python'} "Autopep8 for python  "
 
 call plug#end()
 
