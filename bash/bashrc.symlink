@@ -115,5 +115,8 @@ if [ -d ~/.bash-my-aws ]; then
     source ~/.bash-my-aws/bash_completion.sh
 fi
 
+# direnv
+eval "$(direnv hook bash)"
+
 # bash.local
 [ -f ~/.bash.local ] && source ~/.bash.local
