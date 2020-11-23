@@ -223,9 +223,9 @@ set $Docker ~/.i3/docker.sh
 
 # Teams Notification Hack
 for_window [window_type="notification"] floating enable
-no_focus [window_type="notification"]
-assign [window_type="notification"] output primary
+#assign [window_type="notification"] output primary
 for_window [window_type="notification"] move absolute position 1600 px 20 px
+no_focus [window_type="notification"]
 
 # Reminders
 for_window [title="Reminders"] floating enable
