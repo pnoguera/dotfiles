@@ -1,3 +1,6 @@
+signals:
+  stop: 19
+  cont: 18
 widgets:
   # - widget: static
   #   blocks: >
@@ -11,8 +14,20 @@ widgets:
   #     - button: 1
   #       command: xdg-open https://github.com/burik666/yagostatus/
 
+  - widget: exec
+    interval: 10
+    retry: 1
+    silent: false
+    command: (ping -c1 8.8.8.8 -w 1 2>&1 | awk '/time=/{print substr($7,6),$8}') || echo "Down"
+
+  - widget: exec
+    interval: 10
+    retry: 1
+    silent: true
+    command: (ping -c1 pyur-gw -w 1 2>&1 | awk '/time=/{print substr($8,6),$9}') || echo "Down"
+
   - widget: wrapper
-    command: /usr/bin/conky -c /home/pablo/.i3/conky.conf
+    command: /usr/bin/conky -c /home/pablo/.i3/conky.conf 2> /dev/null
     events:
       - button: 1
         name: cpu
