@@ -5,10 +5,12 @@
 " let g:airline#extensions#ale#enabled = 1
 
 let g:ale_fixers = {
+ \  '*':          ['remove_trailing_lines', 'trim_whitespace'],
  \  'css':        ['prettier'],
  \  'dart':       ['dartfmt'],
  \  'javascript': ['prettier-standard'],
  \  'json':       ['prettier'],
+ \  'black':      ['back'],
  \  'ruby':       ['standardrb'],
  \  'scss':       ['prettier'],
  \  'yml':        ['prettier'],
@@ -16,7 +18,8 @@ let g:ale_fixers = {
 let g:ale_linters = {
  \  'css':        ['csslint'],
  \  'dart':       ['dart-analysis-server-lsp'],
- \  'go':         ['gopls'],
+ \  'Dockerfile': ['hadolint'],
+ \  'go':         ['vim-lsp', 'golint'],
  \  'javascript': ['standard'],
  \  'json':       ['jsonlint'],
  \  'markdown':   ['mdl'],
@@ -35,9 +38,9 @@ let g:ale_lint_on_save             = 1
 let g:ale_lint_on_text_changed     = 'never'
 let g:ale_linters_explicit         = 1
 let g:ale_open_list                = 0
-let g:ale_sign_error               = '❯❯'
+let g:ale_sign_error               = '✗'
 let g:ale_sign_info                = '❯❯'
-let g:ale_sign_warning             = '❯❯'
+let g:ale_sign_warning             = '⚠'
 let g:ale_sign_priority            = 50
 if has("nvim")
     let g:ale_echo_cursor          = 0

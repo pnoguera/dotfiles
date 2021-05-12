@@ -5,8 +5,25 @@ let g:lsp_signs_warning = {'text': '⚠'} " icons require GUI
 let g:lsp_signs_hint = {'text':'️️️I'} " icons require GUI
 let g:lsp_highlight_references_enabled = 1
 
+" let g:lsp_settings = {
+" \  'go': {'cmd': ['gopls','--remote="127.0.0.1:25000"']},
+" \}
 let g:lsp_settings = {
 \  'go': {'cmd': ['gopls','--remote="127.0.0.1:25000"']},
+\  'yaml-language-server': {
+\    'workspace_config': {
+\      'yaml': {
+\        'whitelist': ['yaml', 'yaml.ansible','yaml.kubernetes'],
+\        'schemas': {
+\           'kubernetes': '/*.yml',
+\           'https://raw.githubusercontent.com/docker/compose/master/compose/config/config_schema_v3.4.json': '/docker-compose.y?ml',
+\        },
+\        'completion': v:true,
+\        'hover': v:true,
+\        'validate': v:true,
+\      }
+\    }
+\  },
 \}
 
 function! s:on_lsp_buffer_enabled() abort

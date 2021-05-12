@@ -75,8 +75,10 @@ endif
 " Initialize vim-plug.
 call plug#begin('~/.vim/plugged')
 Plug 'prabirshrestha/async.vim'
+Plug 'dense-analysis/ale'
 Plug 'prabirshrestha/vim-lsp' "use language servers
 Plug 'mattn/vim-lsp-settings' "installs language servers (npm is a requirement)
+Plug 'rhysd/vim-lsp-ale'
 Plug 'prabirshrestha/asyncomplete.vim' "autocomplete
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/asyncomplete-ultisnips.vim' "autocomplete
@@ -107,7 +109,6 @@ Plug 'tpope/vim-fugitive' " git branch
 Plug 'fatih/vim-go'
 Plug 'buoto/gotests-vim', {'for': 'go'} 
 Plug 'sheerun/vim-polyglot'
-Plug 'dense-analysis/ale'
 Plug 'buoto/gotests-vim', {'for': 'go'} 
 Plug 'JamshedVesuna/vim-markdown-preview', {'for': 'markdown'} "markdown plugin
 Plug 'vimwiki/vimwiki'
