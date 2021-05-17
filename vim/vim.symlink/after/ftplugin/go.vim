@@ -30,3 +30,4 @@ nmap <Leader>s <Plug>(go-implements)
 nmap <Leader>i <Plug>(go-info)
 nmap <Leader>e <Plug>(go-rename)
 nmap <leader>gt :GoDeclsDir<cr>
+nmap gr :LspReferences<cr>
