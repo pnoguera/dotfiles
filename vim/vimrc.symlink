@@ -113,6 +113,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'lervag/vimtex' "Latex plugin. https://wikimatze.de/vimtex-the-perfect-tool-for-working-with-tex-and-vim/"
 Plug 'majutsushi/tagbar' "tag browser
 Plug 'tell-k/vim-autopep8' "Autopep8 for python
+Plug 'z0mbix/vim-shfmt', { 'for': 'sh'  } "shell formatter
 
 call plug#end()
 
