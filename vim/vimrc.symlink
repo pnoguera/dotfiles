@@ -48,6 +48,8 @@ sunmap <space>
 " tag browser
 nmap <F8> :TagbarToggle<CR>
 
+" AutoPairs toggle
+let g:AutoPairsShortcutToggle = '<Leader>p'
 
 " Workaroung for gx not working
 " https://github.com/vim/vim/issues/4738
