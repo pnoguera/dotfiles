@@ -54,6 +54,9 @@ alias gb='git branch'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias wo='workon $(basename $PWD)'
 alias k='kubectl --context $K8S_CONTEXT'
+alias weather='curl http://wttr.in/Berlin'
+
+alias kics='docker run -v ${PWD}:/path checkmarx/kics:latest scan -p /path -o /path'
 
 # Tmux ssh rename window
 if [ ! -z $TMUX ]; then
@@ -103,8 +106,10 @@ which kubectl > /dev/null && source <(kubectl completion bash)
 # Vagrant
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
-# Weather alias
-alias weather='curl http://wttr.in/Berlin'
+# Autocomplete
+for file in ~/.bash-autocomplete.d/*; do
+    source $file
+done
 
 # go
 [ -d /usr/local/go ] && export PATH=$PATH:/usr/local/go/bin
