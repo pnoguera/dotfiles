@@ -4,6 +4,7 @@
 sudo apt-get install fonts-font-awesome \
                      conky \
                      parcellite \
+                     redshift-gtk \
                      xss-lock \
                      suckless-tools \
                      rofi \
