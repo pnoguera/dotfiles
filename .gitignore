@@ -15,3 +15,4 @@ vim/vim.symlink/black
 vim/vim.symlink/plugged
 tmux/tmux.symlink/plugins/
 tmux/tmux.symlink/resurrect/
+*.sw[a-z]
