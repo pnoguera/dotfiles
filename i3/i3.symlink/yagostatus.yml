@@ -14,11 +14,19 @@ widgets:
   #     - button: 1
   #       command: xdg-open https://github.com/burik666/yagostatus/
 
+  - widget: $ygs-snippets/home.yaml
+
+  - widget: exec
+    interval: 60
+    retry: 1
+    silent: false
+    command: bash -c 'host -W 2 example.com &> /dev/null && echo -n "DNS Ok" || echo -n "DNS Error"'
+
   - widget: exec
     interval: 10
     retry: 1
     silent: false
-    command: (ping -c1 8.8.8.8 -w 1 2>&1 | awk '/time=/{print substr($7,6),$8}') || echo "Down"
+    command: "ping -c1 8.8.8.8 -w 1 | awk '/time=/{print substr($7,6),$8}'"
 
   - widget: exec
     interval: 10

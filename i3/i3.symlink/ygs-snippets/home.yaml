@@ -1,0 +1,13 @@
+widgets:
+  - widget: exec
+    interval: 60
+    retry: 1
+    silent: false
+    command: bash -c 'mosquitto_sub -N -F "%p°C" -C 1 -h 192.168.178.28 -t bmp085/sensor/bmp085_temperature/state || echo "N/A °C"'
+
+  - widget: exec
+    interval: 60
+    retry: 1
+    silent: false
+    command: bash -c 'mosquitto_sub -N -F "%p ppm" -C 1 -h 192.168.178.28 -t bmp085/sensor/mh-z19_co2_value/state || echo "N/A ppm"'
+
