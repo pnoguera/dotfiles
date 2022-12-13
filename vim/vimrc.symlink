@@ -51,6 +51,14 @@ nmap <F8> :TagbarToggle<CR>
 " AutoPairs toggle
 let g:AutoPairsShortcutToggle = '<Leader>p'
 
+" VimWiki mappings
+map <leader>wc <Plug>VimwikiToggleListItem
+map <leader>wd <Plug>VimwikiMakeDiaryNote
+map <leader>wg <Plug>VimwikiDiaryGenerateLinks
+map <Leader>wD <Plug>VimwikiDeleteLink
+map <Leader>wn <Plug>VimwikiNextLink
+map <Leader>wp <Plug>VimwikiPrevLink
+
 " Workaroung for gx not working
 " https://github.com/vim/vim/issues/4738
 let g:netrw_nogx = 1
