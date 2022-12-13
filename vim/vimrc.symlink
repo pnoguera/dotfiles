@@ -52,6 +52,7 @@ nmap <F8> :TagbarToggle<CR>
 let g:AutoPairsShortcutToggle = '<Leader>p'
 
 " VimWiki mappings
+let g:vimwiki_global_ext = 0
 map <leader>wc <Plug>VimwikiToggleListItem
 map <leader>wd <Plug>VimwikiMakeDiaryNote
 map <leader>wg <Plug>VimwikiDiaryGenerateLinks
