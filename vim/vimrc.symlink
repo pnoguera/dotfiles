@@ -36,6 +36,13 @@ set dictionary=/usr/share/dict/words
 """""      Key Mappings    """""
 """"""""""""""""""""""""""""""""
 
+" leaderrs
+let mapleader=","
+let maplocalleader="_"
+
+" filetype and intent
+filetype plugin indent on
+
 " Buffer cycle
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
@@ -53,12 +60,12 @@ let g:AutoPairsShortcutToggle = '<Leader>p'
 
 " VimWiki mappings
 let g:vimwiki_global_ext = 0
-map <leader>wc <Plug>VimwikiToggleListItem
-map <leader>wd <Plug>VimwikiMakeDiaryNote
-map <leader>wg <Plug>VimwikiDiaryGenerateLinks
-map <Leader>wD <Plug>VimwikiDeleteLink
-map <Leader>wn <Plug>VimwikiNextLink
-map <Leader>wp <Plug>VimwikiPrevLink
+noremap <leader>wc <Plug>VimwikiToggleListItem
+noremap <leader>wd <Plug>VimwikiMakeDiaryNote
+noremap <leader>wg <Plug>VimwikiDiaryGenerateLinks
+noremap <Leader>wD <Plug>VimwikiDeleteLink
+noremap <Leader>wn <Plug>VimwikiNextLink
+noremap <Leader>wp <Plug>VimwikiPrevLink
 
 " Workaroung for gx not working
 " https://github.com/vim/vim/issues/4738
@@ -73,7 +80,7 @@ function! OpenUrlUnderCursor()
         echo "No URL under cursor."
     endif
 endfunction
-nmap gx :call OpenUrlUnderCursor()<CR>
+nnoremap gx :call OpenUrlUnderCursor()<CR>
 
 
 " Automatically install vim-plug and run PlugInstall if vim-plug is not found.
