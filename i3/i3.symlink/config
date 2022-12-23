@@ -39,6 +39,9 @@ bindsym $mod+d exec "rofi -combi-modi window,drun,ssh -theme solarized -font 'ha
 # Emoji
 bindsym $mod+p exec dmenu-emoji.sh list | rofi -dmenu -p 'Emoji: ' | dmenu-emoji.sh copy
 
+# Create note
+bindsym $mod+Shift+Return exec i3-sensible-terminal -e vim ~/notes/$(date +"%Y%m%d-%H%M%S").md
+
 # Mute teams
 # bindsym F2 exec eval $(xdotool getmouselocation --shell) && WIN=$(xdotool search --name 'microsoft teams$') && xdotool windowactivate $WIN && sleep 0.1 && xdotool key --window $WIN 'ctrl+shift+m' && xdotool mousemove --sync $X $Y
 #bindsym F2 exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && notify-send "Mute/Unmute"
