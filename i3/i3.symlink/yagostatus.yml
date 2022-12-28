@@ -49,7 +49,7 @@ widgets:
         command: pavucontrol
 
   - widget: exec
-    command: amixer sget Master |awk -F"[][]" '/dB/ { if ($6 == "on") print "[{\"full_text\":\"",$2,"\"}]"; else print "muted" }'
+    command: pactl get-sink-mute @DEFAULT_SINK@|grep -q yes && echo "muted" || pactl get-sink-volume  @DEFAULT_SINK@ |awk '/Volume/{print "[{\"full_text\":\"",$5,"\"}]"}'
     interval: 1
     events_update: true
     template: >
