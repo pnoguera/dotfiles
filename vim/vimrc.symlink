@@ -31,6 +31,8 @@ set visualbell " no beeps
 "set ruler
 set dictionary=/usr/share/dict/words
 
+" Global variables
+let g:polyglot_disabled = ['go']
 
 """"""""""""""""""""""""""""""""
 """""      Key Mappings    """""
@@ -74,7 +76,7 @@ function! OpenUrlUnderCursor()
     execute "normal BvEy"
     let url=matchstr(@0, '[a-z]*:\/\/[^ >,;]*')
     if url != ""
-        silent exec "!xdg-open '".url."'" | redraw! 
+        silent exec "!xdg-open '".url."'" | redraw!
         echo "opened ".url
     else
         echo "No URL under cursor."
