@@ -39,7 +39,7 @@ widgets:
     events:
       - button: 1
         name: cpu
-        command: gnome-terminal -- top
+        command: gnome-terminal --class=floating -- top
 
   - widget: static
     blocks: >

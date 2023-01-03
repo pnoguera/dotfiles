@@ -238,6 +238,9 @@ set $Docker ~/.i3/docker.sh
 # Tip: To find out what these values might be run:
 #       xprop | grep -i 'class'
 #
+# Floating windows class
+for_window [class="floating"] floating enable
+
 # Teams Notification Hack
 for_window [window_type="notification"] floating enable
 #assign [window_type="notification"] output primary
