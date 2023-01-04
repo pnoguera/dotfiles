@@ -256,6 +256,7 @@ for_window [instance="teams.microsoft.com"] move workspace 4:chat
 for_window [class="Mail"] move workspace 1:mail
 for_window [class="Microsoft-edge-dev"] move workspace 1:mail
 for_window [class="Pavucontrol"] floating enable, border normal
+for_window [class="Cisco AnyConnect"] floating enable, border normal
 
 
 # Locker
