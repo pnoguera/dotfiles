@@ -40,7 +40,8 @@ bindsym $mod+d exec "rofi -dpi 0 -combi-modi window,drun,ssh -theme solarized -f
 bindsym $mod+p exec dmenu-emoji.sh list | rofi -dpi 0 -dmenu -p 'Emoji: ' | dmenu-emoji.sh copy
 
 # Create note
-bindsym $mod+Shift+Return exec i3-sensible-terminal -e vim ~/notes/$(date +"%Y%m%d-%H%M%S").md
+bindsym $mod+Shift+Return exec gnome-terminal --class=floating -- vim ~/notes/$(date +"%Y%m%d-%H%M%S").md
+# bindsym $mod+Shift+Return exec i3-sensible-terminal -e vim ~/notes/$(date +"%Y%m%d-%H%M%S").md
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
