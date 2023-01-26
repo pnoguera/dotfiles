@@ -43,6 +43,6 @@ if [ "$0" = "/etc/gdm3/Xsession" -a "$DESKTOP_SESSION" = "i3" ]; then
 fi
 
 # Set CapsLock to Ctrl
-which setxkbmap && setxkbmap -option ctrl:nocaps
+which setxkbmap > /dev/null && setxkbmap -option ctrl:nocaps
 
 
