@@ -249,11 +249,15 @@ for_window [window_type="notification"] move absolute position 1600 px 20 px
 no_focus [window_type="notification"]
 
 # Other
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="browser"] move workspace 3:www
+for_window [class="teams-for-linux"] move workspace 4:chat
+for_window [class="firefox"] move workspace 5
+for_window [instance="teams.microsoft.com"] move workspace 4:chat
 for_window [title="Reminders"] floating enable
 for_window [title="Calculator"] floating enable
-for_window [class="Vivaldi-stable"] move workspace 3:www
-for_window [class="Microsoft Teams - Preview"] move workspace 4:chat
-for_window [instance="teams.microsoft.com"] move workspace 4:chat
+for_window [title="Weather"] floating enable
+for_window [title="Outlook"] floating disable move workspace 1:mail
 for_window [class="Mail"] move workspace 1:mail
 for_window [class="Microsoft-edge-dev"] move workspace 1:mail
 for_window [class="Pavucontrol"] floating enable, border normal
