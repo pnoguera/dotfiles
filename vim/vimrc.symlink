@@ -60,6 +60,11 @@ nmap <F8> :TagbarToggle<CR>
 " AutoPairs toggle
 let g:AutoPairsShortcutToggle = '<Leader>p'
 
+" Terraform and HCL
+let g:hcl_align=1
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
+
 " VimWiki mappings
 let g:vimwiki_global_ext = 0
 noremap <leader>wc <Plug>VimwikiToggleListItem
@@ -92,6 +97,20 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" Align text with | <text> |
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
 " Initialize vim-plug.
 call plug#begin('~/.vim/plugged')
 Plug 'prabirshrestha/async.vim'
@@ -114,11 +133,12 @@ Plug 'tpope/vim-surround' "Surrounding plugin
 Plug 'tpope/vim-unimpaired' "Unimpaired
 Plug 'tpope/vim-commentary' "Add comment with gc
 Plug 'tpope/vim-repeat' "Repeat plugin actions with .
-Plug 'tpope/vim-speeddating' "Repeat plugin actions with .
+Plug 'tpope/vim-speeddating' "Incremets and decrements dates, times, etc
 Plug 'tpope/vim-dispatch' "Dispatch plugin
 Plug 'tpope/vim-projectionist'
 Plug 'jiangmiao/auto-pairs'
 Plug 'nazo/pt.vim' "pt searcher plugin
+Plug 'godlygeek/tabular' "text filtering and alignement
 " Plug 'junegunn/limelight.vim'
 "
 "
