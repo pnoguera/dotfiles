@@ -54,6 +54,7 @@ alias gb='git branch'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias wo='workon $(basename $PWD)'
 alias k='kubectl --context $K8S_CONTEXT'
+complete -o default -F __start_kubectl k
 alias weather='curl http://wttr.in/Berlin'
 
 alias kics='docker run -v ${PWD}:/path checkmarx/kics:latest scan -p /path -o /path'
