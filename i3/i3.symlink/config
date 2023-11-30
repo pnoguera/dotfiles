@@ -190,6 +190,7 @@ bar {
 }
 
 # Startup applications
+exec --no-startup-id picom -b  # compositor for transparencies and other fancy things
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 exec --no-startup-id parcellite
@@ -197,7 +198,7 @@ exec --no-startup-id autorandr -c
 exec --no-startup-id redshift-gtk &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id /usr/bin/indicator-sound-switcher &
-exec_always --no-startup-id feh --bg-scale /usr/share/backgrounds/Optical_Fibers_in_Dark_by_Elena_Stravoravdi.jpg
+exec_always --no-startup-id feh --bg-scale /usr/share/backgrounds/El_Haouaria_by_Nusi_Nusi.jpg
 exec_always --no-startup-id /usr/bin/xss-lock -- /usr/bin/i3lock -i /home/pablo/.i3/lock.png -c 141414 &
 # IBus is now in charge
 # exec_always --no-startup-id "setxkbmap -model pc104 -layout de,us -variant ,, -option grp:alt_shift_toggle"
