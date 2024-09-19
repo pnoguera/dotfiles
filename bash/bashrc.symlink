@@ -144,6 +144,4 @@ eval "$(direnv hook bash)"
 [ -f "${HOME}/.env" ] && export $(envsubst < ${HOME}/.env)
 
 # atuine
-# eval "$(atuin init bash --disable-up-arrow)"
-eval "$(atuin init bash)"
-
+eval "$(atuin init bash --disable-up-arrow)"
