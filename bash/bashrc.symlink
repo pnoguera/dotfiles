@@ -89,6 +89,9 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # AUTOCOMPLETION
 #
 
+# Preexec https://github.com/rcaloras/bash-preexec
+[[ -f ~/.bash-preexec.sh  ]] && source ~/.bash-preexec.sh
+
 # enable bash completion in interactive shells
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -131,9 +134,6 @@ fi
 # direnv
 eval "$(direnv hook bash)"
 
-# atuine
-eval "$(atuin init bash)"
-
 # bash.local
 [ -f ~/.bash.local ] && source ~/.bash.local
 
@@ -142,3 +142,8 @@ eval "$(atuin init bash)"
 
 # Expand .env
 [ -f "${HOME}/.env" ] && export $(envsubst < ${HOME}/.env)
+
+# atuine
+# eval "$(atuin init bash --disable-up-arrow)"
+eval "$(atuin init bash)"
+
