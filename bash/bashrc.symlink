@@ -131,6 +131,9 @@ fi
 # direnv
 eval "$(direnv hook bash)"
 
+# atuine
+eval "$(atuin init bash)"
+
 # bash.local
 [ -f ~/.bash.local ] && source ~/.bash.local
 
