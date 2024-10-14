@@ -9,11 +9,13 @@ function! ToggleMouse()
         set mouse=a
     endif
 endfunc
-nmap  \m :call ToggleMouse()<CR>
+nmap  <Leader>m :call ToggleMouse()<CR>
 
 set mouse+=a
 if &term =~ '^screen'
     " tmux knows the extended mouse mode
-    set ttymouse=xterm2
+    if !has('nvim')
+        set ttymouse=xterm2
+    endif
 endif
 
