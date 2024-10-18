@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+[ -z "$1" ] && echo "Usage: goupdate VERSION" && exit 2
+
+VERSION=$1
+
+# Install the specified version
+go install golang.org/dl/go${VERSION}@latest
+go${VERSION} download
+
+# Update the symlink for the active Go version
+[ -f ~/go/bin/go ] && rm ~/go/bin/go
+ln -s ~/go/bin/go${VERSION} ~/go/bin/go
+
+# Optionally clean up old versions
+echo "Cleaning up old Go versions..."
+for go_version_dir in ~/sdk/go*; do
+    if [[ "$go_version_dir" != *"go${VERSION}"* ]]; then
+        echo "Removing $go_version_dir"
+        rm -rf "$go_version_dir"
+    fi
+done
