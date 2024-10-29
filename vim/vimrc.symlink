@@ -22,7 +22,7 @@ set modeline
 set hlsearch
 set complete+=kspell
 set list
-set listchars=tab:→\ ,trail:~,extends:>,precedes:< " Show whitespace
+set listchars=tab:→\ ,trail:~,extends:>,precedes:<,space:· " Show whitespace
 set foldmethod=indent " Folding based on indentation
 set nofoldenable
 "set cursorline
