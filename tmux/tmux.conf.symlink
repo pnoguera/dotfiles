@@ -16,6 +16,11 @@ set -s escape-time 0                      # fastest command sequences
 set -sg repeat-time 600                   # increase repeat timeout
 
 set -g prefix2 C-a                        # GNU-Screen compatible prefix
+
+set-option -ga update-environment SWAYSOCK # Update SWAYSOCK variable
+set-option -ga update-environment XDG_SESSION_TYPE  # Update XDG_SESSION_TYPE variable
+set-option -ga update-environment WAYLAND_DISPLAY  # Update WAYLAND_DISPLAY variable
+
 bind C-a send-prefix -2
 
 # uncomment to force vi-style key bindings
