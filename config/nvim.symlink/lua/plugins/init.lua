@@ -1,5 +1,0 @@
--- require('lazy').setup({
---   require('plugins.treesitter'),
---   require('plugins.lualine'),
---   -- Add more plugin files here
--- })
