@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		-- Default options
 		vim.opt.tabstop = 2 -- number of visual spaces per TAB
 		vim.opt.softtabstop = 2 -- number of spacesin tab when editing
-		vim.opt.shiftwidth = 2 -- insert 4 spaces on a tab
+		vim.opt.shiftwidth = 2 -- insert 2 spaces on a tab
 
 		-- Ensure 'tfdoc' is executable before setting up commands and mappings
 		if vim.fn.executable("tfdoc") == 1 then
