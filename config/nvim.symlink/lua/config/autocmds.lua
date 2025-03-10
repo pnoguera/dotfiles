@@ -54,3 +54,24 @@ vim.api.nvim_create_autocmd("FileType", {
 		})
 	end,
 })
+
+-- Autoformat setting
+local set_autoformat = function(pattern, bool_val)
+	vim.api.nvim_create_autocmd({ "FileType" }, {
+		pattern = pattern,
+		callback = function()
+			vim.b.autoformat = bool_val
+		end,
+	})
+end
+
+set_autoformat({ "bash" }, false)
+set_autoformat({ "sh" }, false)
+set_autoformat({ "terraform" }, true)
+set_autoformat({ "python" }, false)
+set_autoformat({ "go" }, true)
+set_autoformat({ "cpp" }, true)
+set_autoformat({ "fish" }, false)
+set_autoformat({ "lua" }, true)
+set_autoformat({ "perl" }, false)
+set_autoformat({ "yaml" }, false)

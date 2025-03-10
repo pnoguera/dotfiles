@@ -27,7 +27,7 @@ return {
 
 	---@type Ollama.Config
 	opts = {
-		model = "qwen2.5-coder:3b",
+		model = "deepseek-r1:1.5b",
 		-- your configuration overrides
 	},
 }
