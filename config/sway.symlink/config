@@ -1,5 +1,8 @@
 set $mod Mod4
-set $terminal foot
+set $terminal ghostty
+set $terminal_floating ghostty --class=term_floating
+# set $terminal foot
+#set $terminal_floating foot -a term_floating
 set $background /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_2048x1536.png
 set $fuzzel fuzzel -b 282a36fa -s 3d4474fa -C fffffffa
 # set $background /home/pablo/.i3/wallpaper.jpg
@@ -123,8 +126,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec $terminal
 # Create note
-bindsym $mod+Shift+Return exec $terminal -a foot_floating -- vim ~/notes/$(date +"%Y%m%d-%H%M%S").md
-bindsym $mod+Alt+Return exec $terminal -a foot_floating
+# bindsym $mod+Shift+Return exec $terminal_floating -- vim ~/notes/$(date +"%Y%m%d-%H%M%S").md
+bindsym $mod+Shift+Return exec $terminal_floating -e vim ~/notes/$(date +"%Y%m%d-%H%M%S").md
+bindsym $mod+Alt+Return exec $terminal_floating
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -334,7 +338,7 @@ set $Docker ~/.i3/docker.sh
 #
 # Floating windows class
 for_window [class="floating"] floating enable
-for_window [app_id="foot_floating"] floating enable
+for_window [app_id="term_floating"] floating enable
 
 # Teams Notification Hack
 for_window [window_type="notification"] floating enable
