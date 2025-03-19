@@ -1,0 +1,15 @@
+[Unit]
+Description=Ollama Service
+Documentation=https://github.com/ollama/ollama
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/pablo/bin/ollama serve
+
+Restart=on-failure
+RestartSec=3
+MemoryMax=90%
+
+[Install]
+WantedBy=default.target
