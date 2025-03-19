@@ -1,0 +1,8 @@
+[Unit]
+Description=Go Language Server Per-Connection Server
+
+[Service]
+ExecStart=/home/pablo/go/bin/gopls serve -listen localhost:25000
+
+[Install]
+WantedBy=default.target
