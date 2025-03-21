@@ -5,7 +5,12 @@ use epm
 epm:install &silent-if-installed ^
     github.com/zzamboni/elvish-themes ^
     github.com/muesli/elvish-libs ^
-    github.com/zzamboni/elvish-modules/dir
+    github.com/zzamboni/elvish-modules/dir ^
+    github.com/zzamboni/elvish-modules/git-summary
+
+### Use custom modules
+use github.com/zzamboni/elvish-modules/git-summary
+
 
 ### Config
 set edit:insert:binding[Alt-Backspace] = $edit:kill-small-word-left~
@@ -48,7 +53,39 @@ set paths = [
 ]
 
 # Aliases
+fn cd {|@a| use github.com/zzamboni/elvish-modules/dir; dir:cd $@a}
 fn ls {|@a| e:ls --color $@a }
 fn k {|@a| e:kubectl --context $@a }
 fn wo {|| e:workon (path:base $E:PWD) }
 fn weather { || curl http://wttr.in/Berlin }
+
+# git Aliases
+fn gb {|@a| e:git branch}
+fn gc {|@a| e:git commit}
+fn gca {|@a| e:git commit -a}
+fn gcb {|@a| e:git copy-branch-name}
+fn gco {|@a| e:git checkout}
+fn gd {|@a| e:git diff}
+fn gl {|@a| e:git pull --prune}
+fn gp {|@a| e:git push origin HEAD}
+fn gs {|@a| e:git status -sb}
+
+fn remove_untracked_files {
+    git ls-files --other --exclude-standard | xargs rm -rf
+}
+fn glog {
+    |@a| 
+    var HASH = "%C(always,yellow)%h%C(always,reset)"
+    var RELATIVE_TIME = "%C(always,green)%ar%C(always,reset)"
+    var AUTHOR = "%C(always,bold blue)%an%C(always,reset)"
+    var REFS = "%C(always,red)%d%C(always,reset)"
+    var SUBJECT = "%s"
+    var FORMAT = $HASH' '$RELATIVE_TIME'{'$AUTHOR'{'$REFS' '$SUBJECT
+
+    echo $HASH
+    echo $FORMAT
+
+    git log --graph --pretty="tformat:"$FORMAT $@a |
+    column -t -s '{' |
+    less -XRS --quit-if-one-screen
+}
