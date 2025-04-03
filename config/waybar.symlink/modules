@@ -84,12 +84,8 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "actions": {
-            //"on-click": "foo -- top"
-            "on-click": "ghostty -e top"
-        },
         "tooltip": false,
-        "on-click": "foot -a foot_floating -- top"
+        "on-click": "ghostty --class=ghostty.floating -e top"
 
     },
     "memory": {
