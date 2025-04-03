@@ -1,5 +1,6 @@
 set $mod Mod4
 set $terminal ghostty
+# class sets the app-id in wayland
 set $terminal_floating ghostty --class=term_floating
 # set $terminal foot
 #set $terminal_floating foot -a term_floating
@@ -66,12 +67,12 @@ output $dell {
  
 output DP-8 {
     scale 1.0
-    pos 0 270
+    pos 1920 270
 }
 
 output DP-9 {
     scale 1.0
-    pos 1920 270
+    pos 0 270
 }
 
 bindswitch --reload --locked lid:on output $laptop disable
