@@ -213,9 +213,27 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-/* #power-profiles-daemon { */
-/*     background-color: #bbccdd; */
-/* } */
+#power-profiles-daemon {
+    padding: 0 10px;
+    margin: 3px 3px;
+    background-color: #bbccdd;
+    color: #000000;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#power-profiles-daemon.performance {
+    background-color: #eb4d4b;
+    color: #2a5c45;
+}
+
+#custom-power {
+    color: #333333;
+    background-color: #bbccdd;
+}
 
 #tray {
     background-color: #bbccdd;
@@ -254,6 +272,29 @@ label:focus {
 
 #mpd.paused {
     background-color: #51a37a;
+}
+
+#mpris {
+    padding: 0 10px;
+    margin: 3px 3px;
+    background-color: #bbccdd;
+    color: #000000;
+    /*background-color: #66cc99;*/
+    /*color: #2a5c45;*/
+}
+
+#mpris.playing {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#custom-ping {
+    padding: 0 10px;
+    margin: 3px 3px;
+    background-color: #bbccdd;
+    color: #000000;
+    /*background-color: #66cc99;*/
+    /*color: #2a5c45;*/
 }
 
 #language {

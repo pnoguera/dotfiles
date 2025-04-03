@@ -48,6 +48,22 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
+    "mpris": {
+        "format": "{player_icon} <b>{title}</b> - {artist}",
+        "format-paused": "{status_icon} <b>{title}</b> - {artist}",
+        //"format-paused": "{player}: {status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+        //    "default": "▶",
+            "default": "🎵",
+            "spotify": "",
+            "mpv": "🎵"
+        },
+        "status-icons": {
+            "paused": "⏸",
+            "stopped": "⏸"
+        },
+        // "ignored-players": ["firefox"]
+    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -69,7 +85,8 @@
     "cpu": {
         "format": "{usage}% ",
         "actions": {
-            "on-click": "foo -- top"
+            //"on-click": "foo -- top"
+            "on-click": "ghostty -e top"
         },
         "tooltip": false,
         "on-click": "foot -a foot_floating -- top"
@@ -136,34 +153,6 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
-    "mpris": {
-        "format": "{player_icon} {title} - {artist}",
-        "format-paused": "{status_icon} {title} - {artist}",
-        //"format-paused": "{player}: {status_icon} <i>{dynamic}</i>",
-        "player-icons": {
-        //    "default": "▶",
-            "default": "🎵",
-            "spotify": "",
-            "mpv": "🎵"
-        },
-        "status-icons": {
-            "paused": "⏸",
-            "stopped": "⏸"
-        },
-        // "ignored-players": ["firefox"]
     },
 	"power-profiles-daemon": {
 	  "format": "{icon}   {profile}",
