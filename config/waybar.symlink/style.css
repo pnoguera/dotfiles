@@ -231,6 +231,8 @@ label:focus {
 }
 
 #custom-power {
+    padding: 0 10px;
+    margin: 3px 3px;
     color: #333333;
     background-color: #bbccdd;
 }
