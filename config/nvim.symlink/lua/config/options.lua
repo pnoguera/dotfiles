@@ -33,3 +33,6 @@ vim.g.terraform_fmt_on_save = 1
 -- Disable LSP Syntaxt highlight
 
 -- vim.lsp.handlers["textDocument/semanticTokens/full"] = function() end
+
+-- Other
+-- require("config.terraform")

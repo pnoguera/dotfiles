@@ -312,7 +312,13 @@ bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 # Touchpad controls
 #bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
+# unbound keys
+# XF86Favorites
+# XF86NotificationCenter
+
 # Media player controls
+bindsym XF86PickupPhone exec playerctl play-pause
+bindsym XF86HangupPhone exec playerctl next
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next

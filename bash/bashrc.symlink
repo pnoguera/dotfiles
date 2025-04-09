@@ -63,6 +63,7 @@ complete -o default -F __start_kubectl k
 alias weather='curl http://wttr.in/Berlin'
 
 alias kics='docker run -v ${PWD}:/path checkmarx/kics:latest scan -p /path -o /path'
+alias pip='uv pip'
 
 # Tmux ssh rename window
 if [ ! -z $TMUX ]; then

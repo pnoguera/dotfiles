@@ -74,7 +74,15 @@ noremap <Leader>wD <Plug>VimwikiDeleteLink
 noremap <Leader>wn <Plug>VimwikiNextLink
 noremap <Leader>wp <Plug>VimwikiPrevLink
 
-" Workaroung for gx not working
+" ollama
+let g:ollama_enabled = 0
+let g:ollama_host = 'http://localhost:11434'
+let g:ollama_model = 'qwen2.5-coder:3b'
+let g:ollama_chat_model = 'llama3.2'
+
+
+
+"" Workaroung for gx not working
 " https://github.com/vim/vim/issues/4738
 let g:netrw_nogx = 1
 function! OpenUrlUnderCursor()
@@ -154,6 +162,9 @@ Plug 'lervag/vimtex' "Latex plugin. https://wikimatze.de/vimtex-the-perfect-tool
 Plug 'majutsushi/tagbar' "tag browser
 Plug 'tell-k/vim-autopep8' "Autopep8 for python
 Plug 'z0mbix/vim-shfmt', { 'for': 'sh'  } "shell formatter
+
+" Test plugins
+Plug 'gergap/vim-ollama'
 
 call plug#end()
 

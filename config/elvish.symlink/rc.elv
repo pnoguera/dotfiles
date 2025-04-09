@@ -19,10 +19,6 @@ set edit:insert:binding[Alt-m] = $edit:-instant:start~
 # limit history and location height
 set edit:max-height = 20
 
-#   eval (starship init elvish | sed 's/except/catch/')
-# Temporary fix for use of except in the output of the Starship init code
-eval (~/bin/starship init elvish --print-full-init | slurp)
-
 # Where all the Go stuff is
 if (path:is-dir ~/Dropbox/Personal/devel/go) {
   set E:GOPATH = ~/Dropbox/Personal/devel/go
@@ -54,6 +50,7 @@ set paths = [
 
 # Aliases
 fn cd {|@a| use github.com/zzamboni/elvish-modules/dir; dir:cd $@a}
+fn pip {|@a| e:uv pip $@a}
 fn ls {|@a| e:ls --color $@a }
 fn k {|@a| e:kubectl --context $@a }
 fn wo {|| e:workon (path:base $E:PWD) }
@@ -89,3 +86,13 @@ fn glog {
     column -t -s '{' |
     less -XRS --quit-if-one-screen
 }
+
+
+### Extras ###
+#   eval (starship init elvish | sed 's/except/catch/')
+# Temporary fix for use of except in the output of the Starship init code
+eval (~/bin/starship init elvish --print-full-init | slurp)
+
+# Carapace shell completion
+eval (carapace _carapace elvish | slurp)
+

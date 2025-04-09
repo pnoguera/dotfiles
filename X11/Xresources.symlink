@@ -129,3 +129,5 @@ XTerm.VT100.translations: #override \
     Super <Key> KP_Add: larger-vt-font() \n
 
 Xterm*termName: xterm-256color
+!Xft.dpi: 156
+Xft.dpi: 120

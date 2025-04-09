@@ -3,9 +3,9 @@
 if [ -f /etc/debian_version ]; then
     sudo apt-get -y install \
         vim \
-        vim-gnome \
+        vim-gtk3 \
         markdown \
         xdotool
 fi
 
-go get -u github.com/cweill/gotests/...
+# go install github.com/cweill/gotests/...
