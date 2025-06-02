@@ -169,7 +169,7 @@
         "format": "{icon} {}",
         "max-length": 40,
         "interval": 10,
-        "exec": "(ping -c 1 -W 1 1.1.1.1 || echo 'No Inet' >&2) | sed -n 's/.*time=//p'"
+        "exec": "(ping -c 1 -W 1 1.1.1.1 || echo 'time=No Inet') | sed -n 's/.*time=//p'"
     }
 }
 
