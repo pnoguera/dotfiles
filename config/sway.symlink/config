@@ -15,7 +15,6 @@ exec wl-paste --watch cliphist store  # Clipboard
 exec blueman-applet
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
-exec --no-startup-id parcellite
 exec --no-startup-id gammastep-indicator -l 52.52437:13.41053 -m wayland &
 # exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id /usr/bin/indicator-sound-switcher
@@ -374,7 +373,7 @@ for_window [class="zoom"] floating enable, border normal
 
 # Locker
 # set $Locker swaylock -f -i ~/.i3/lock.png -c 141414
-set $Locker swaylock -f -i /usr/share/desktop-base/active-theme/lockscreen/contents/images/3200x1800.svg -c 141414
+set $Locker swaylock -f -i /usr/share/desktop-base/active-theme/lockscreen/contents/images/2520x1080.svg -c 141414
 bindsym ctrl+$mod+l exec $Locker
 exec_always killall swayidle
 exec_always swayidle -w \
