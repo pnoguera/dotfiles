@@ -1,0 +1,32 @@
+-- config/terraform.lua
+
+-- Set up syntax highlighting for Terraform files
+vim.api.nvim_create_autocmd("BufRead", {
+	pattern = "*.tf",
+	callback = function()
+		vim.opt.filetype = "terraform"
+	end,
+})
+
+-- Define the error format for Terraform
+vim.opt.errorformat = "%f:%l:%c:%m"
+
+-- Set the compiler for Terraform files
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "terraform",
+	callback = function()
+		vim.opt.makeprg = "make"
+	end,
+})
+
+-- Define the Terraform compiler settings
+if vim.fn.exists(":CompilerSet") == 1 then
+	vim.api.nvim_command([[
+        call compiler#custom#Add('terraform', {
+        \ 'name': 'terraform',
+        \ 'executable': 'make',
+        \ 'errorformat': '%f:%l:%c:%m',
+        \ 'category': 'h'
+        \ })
+    ]])
+end
