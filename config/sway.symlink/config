@@ -29,7 +29,7 @@ input * {
 }
 
 # Outputs
-set $laptop "Samsung Display Corp. 0x4193 Unknown"
+set $laptop "Lenovo Group Limited 0x4149 Unknown"
 set $lghome "LG Electronics LG Ultra HD 0x0002D537"
 set $dell "Dell Inc. DELL U2723QE GFDC6P3"
 set $hdmi "HDMI-A-1"
