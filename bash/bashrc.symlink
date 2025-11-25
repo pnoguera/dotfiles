@@ -96,7 +96,10 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 #
 
 # Preexec https://github.com/rcaloras/bash-preexec
-[[ -f ~/.bash-preexec.sh  ]] && source ~/.bash-preexec.sh
+# [[ -f ~/.bash-preexec.sh  ]] && source ~/.bash-preexec.sh
+
+# ble.sh https://github.com/akinomyoga/ble.sh
+source -- ~/.local/share/blesh/ble.sh
 
 # enable bash completion in interactive shells
 if ! shopt -oq posix; then
