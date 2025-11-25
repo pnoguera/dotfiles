@@ -40,7 +40,10 @@ bind e new-window -n '~/.tmux.conf' '${EDITOR:-vim} ~/.tmux.conf && tmux source 
 bind r source-file ~/.tmux.conf \; display '~/.tmux.conf sourced'
 
 # see https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
-if 'which -s reattach-to-user-namespace' 'set -g default-command "tmux rename-window initializing; tmux set -w automatic-rename; reattach-to-user-namespace $SHELL -l"'
+#if 'which -s reattach-to-user-namespace' 'set -g default-command "tmux rename-window initializing; tmux set -w automatic-rename; reattach-to-user-namespace $SHELL -l"'
+
+# Needed for ATUIN to work
+set-option -g default-command bash
 
 # reload config without killing server
 bind R source-file ~/.tmux.conf \; display-message "  Config reloaded..".
