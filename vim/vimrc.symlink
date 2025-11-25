@@ -78,7 +78,7 @@ noremap <Leader>wp <Plug>VimwikiPrevLink
 let g:ollama_enabled = 0
 let g:ollama_host = 'http://localhost:11434'
 let g:ollama_model = 'qwen2.5-coder:3b'
-let g:ollama_chat_model = 'llama3.2'
+let g:ollama_chat_model = 'gemma3n:e2b'
 
 
 
