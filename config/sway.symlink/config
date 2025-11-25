@@ -14,7 +14,7 @@ exec mako   # notifications
 exec wl-paste --watch cliphist store  # Clipboard
 exec blueman-applet
 exec --no-startup-id nm-applet
-exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+# exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 exec --no-startup-id gammastep-indicator -l 52.52437:13.41053 -m wayland &
 # exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id /usr/bin/indicator-sound-switcher
@@ -379,9 +379,9 @@ exec_always killall swayidle
 exec_always swayidle -w \
     timeout 270 'nofify-send "Locking screen in 30 seconds"' \
     timeout 300 'exec $Locker' \
-    timeout 600 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' \
     before-sleep 'exec $Locker' &
+    # timeout 600 'swaymsg "output * dpms off"' \
+    # resume 'swaymsg "output * dpms on"' \
 
 # set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 # mode "$mode_system" {

@@ -85,7 +85,7 @@
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false,
-        "on-click": "ghostty --class=ghostty.floating -e top"
+        "on-click": "ghostty --class=ghostty.floating -e btop"
 
     },
     "memory": {
