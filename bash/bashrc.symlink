@@ -101,6 +101,10 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # ble.sh https://github.com/akinomyoga/ble.sh
 source -- ~/.local/share/blesh/ble.sh
 
+# ble.sh configuration
+bleopt complete_auto_complete=
+ble-bind -m 'emacs' -f 'M-DEL' 'kill-backward-cword'
+
 # enable bash completion in interactive shells
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
