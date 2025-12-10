@@ -102,7 +102,12 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 source -- ~/.local/share/blesh/ble.sh
 
 # ble.sh configuration
+bleopt complete_ambiguous=1
 bleopt complete_auto_complete=
+# bash like completion without menu
+# bleopt complete_auto_menu=
+
+# ble.sh keybindings
 ble-bind -m 'emacs' -f 'M-DEL' 'kill-backward-cword'
 
 # enable bash completion in interactive shells

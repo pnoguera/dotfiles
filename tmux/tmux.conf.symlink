@@ -49,7 +49,7 @@ set-option -g default-command bash
 bind R source-file ~/.tmux.conf \; display-message "  Config reloaded..".
 
 # quick view of processes
-bind '~' split-window "exec htop"
+bind '~' split-window "exec top"
 
 # set vi keys
 setw -g mode-keys vi
