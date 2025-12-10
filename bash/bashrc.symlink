@@ -98,18 +98,6 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # Preexec https://github.com/rcaloras/bash-preexec
 # [[ -f ~/.bash-preexec.sh  ]] && source ~/.bash-preexec.sh
 
-# ble.sh https://github.com/akinomyoga/ble.sh
-source -- ~/.local/share/blesh/ble.sh
-
-# ble.sh configuration
-bleopt complete_ambiguous=1
-bleopt complete_auto_complete=
-# bash like completion without menu
-# bleopt complete_auto_menu=
-
-# ble.sh keybindings
-ble-bind -m 'emacs' -f 'M-DEL' 'kill-backward-cword'
-
 # enable bash completion in interactive shells
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -163,3 +151,21 @@ eval "$(direnv hook bash)"
 
 # atuine
 eval "$(atuin init bash --disable-up-arrow)"
+
+#
+# ble.sh
+# https://github.com/akinomyoga/ble.sh
+#
+source -- ~/.local/share/blesh/ble.sh
+
+# configuration
+bleopt complete_ambiguous=1
+bleopt complete_auto_complete=
+# bash like completion without menu
+# bleopt complete_auto_menu=
+#bleopt prompt_rps1='\t' # time in the right side
+
+
+# keybindings
+ble-bind -m 'emacs' -f 'M-DEL' 'kill-backward-cword'
+

@@ -43,13 +43,13 @@ bind r source-file ~/.tmux.conf \; display '~/.tmux.conf sourced'
 #if 'which -s reattach-to-user-namespace' 'set -g default-command "tmux rename-window initializing; tmux set -w automatic-rename; reattach-to-user-namespace $SHELL -l"'
 
 # Needed for ATUIN to work
-set-option -g default-command bash
+set -g default-command "bash -l"
 
 # reload config without killing server
 bind R source-file ~/.tmux.conf \; display-message "  Config reloaded..".
 
 # quick view of processes
-bind '~' split-window "exec top"
+# bind '~' split-window "exec top"
 
 # set vi keys
 setw -g mode-keys vi
