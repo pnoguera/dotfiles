@@ -155,17 +155,17 @@ eval "$(atuin init bash --disable-up-arrow)"
 #
 # ble.sh
 # https://github.com/akinomyoga/ble.sh
-#
-source -- ~/.local/share/blesh/ble.sh
+# Only for interactive session
 
-# configuration
-bleopt complete_ambiguous=1
-bleopt complete_auto_complete=
-# bash like completion without menu
-# bleopt complete_auto_menu=
-#bleopt prompt_rps1='\t' # time in the right side
+if [[ $- == *i* ]]; then
+    source -- ~/.local/share/blesh/ble.sh
 
+    # configuration
+    bleopt complete_ambiguous=1
+    bleopt complete_auto_complete=
+    #bleopt complete_auto_menu=
+    bleopt prompt_rps1='\t' # time in the right side
 
-# keybindings
-ble-bind -m 'emacs' -f 'M-DEL' 'kill-backward-cword'
-
+    # keybindings
+    ble-bind -m 'emacs' -f 'M-DEL' 'kill-backward-cword'
+fi
