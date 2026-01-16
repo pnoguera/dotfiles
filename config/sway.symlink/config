@@ -375,8 +375,7 @@ for_window [class="zoom"] floating enable, border normal
 # set $Locker swaylock -f -i ~/.i3/lock.png -c 141414
 set $Locker swaylock -f -i /usr/share/desktop-base/active-theme/lockscreen/contents/images/2520x1080.svg -c 141414
 bindsym ctrl+$mod+l exec $Locker
-exec_always killall swayidle
-exec_always swayidle -w \
+exec_always killall swayidle; swayidle -w \
     timeout 270 'nofify-send "Locking screen in 30 seconds"' \
     timeout 300 'exec $Locker' \
     before-sleep 'exec $Locker' &
