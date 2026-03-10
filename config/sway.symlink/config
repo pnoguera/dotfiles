@@ -12,6 +12,7 @@ exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSO
 exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP=sway
 exec mako   # notifications
 exec wl-paste --watch cliphist store  # Clipboard
+exec /usr/libexec/polkit-mate-authentication-agent-1
 exec blueman-applet
 exec --no-startup-id nm-applet
 # exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh

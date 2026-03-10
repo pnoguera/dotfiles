@@ -8,6 +8,39 @@ return {
 	version = false, -- Never set this value to "*"! Never!
 	---@module 'avante'
 	---@type avante.Config
+	config = function(_, opts)
+		require("avante").setup(opts)
+		-- Patch Bedrock provider to use aws2 instead of aws
+		local bedrock = require("avante.providers.bedrock")
+		bedrock.check_aws_cli_installed = function()
+			local result = vim.system({ "aws2", "--version" }, { text = true }):wait(10000)
+			return result.code == 0
+		end
+		bedrock.get_aws_credentials = function(self, region, profile)
+			local awsCreds = {
+				access_key_id = "",
+				secret_access_key = "",
+				session_token = "",
+			}
+			local args = { "aws2", "configure", "export-credentials" }
+			if profile and profile ~= "" then
+				table.insert(args, "--profile")
+				table.insert(args, profile)
+			end
+			if region and region ~= "" then
+				table.insert(args, "--region")
+				table.insert(args, region)
+			end
+			local result = vim.system(args, { text = true }):wait(10000)
+			if result.code == 0 then
+				local credentials = vim.json.decode(result.stdout)
+				awsCreds.access_key_id = credentials.AccessKeyId
+				awsCreds.secret_access_key = credentials.SecretAccessKey
+				awsCreds.session_token = credentials.SessionToken
+			end
+			return awsCreds
+		end
+	end,
 	opts = {
 		-- add any opts here
 		-- this file can contain specific instructions for your project
@@ -18,7 +51,7 @@ return {
 			bedrock = {
 				model = "eu.anthropic.claude-haiku-4-5-20251001-v1:0",
 				aws_region = "eu-west-1",
-				aws_profile = "DeveloperClaudeCodeDATAAIDev", -- optional
+				aws_profile = "DeveloperClaudeCodeDATAAIDev",
 				timeout = 30000,
 				-- extra_request_body = {
 				--     temperature = 0.75,

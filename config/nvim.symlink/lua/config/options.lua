@@ -30,6 +30,19 @@ vim.g.hcl_align = 1
 vim.g.terraform_align = 1
 vim.g.terraform_fmt_on_save = 1
 
+-- Clipboard tool
+vim.g.clipboard = {
+	name = "wl-clipboard",
+	copy = {
+		["+"] = "wl-copy",
+		["*"] = "wl-copy --primary",
+	},
+	paste = {
+		["+"] = "wl-paste --no-newline",
+		["*"] = "wl-paste --no-newline --primary",
+	},
+	cache_enabled = 1,
+}
 -- Disable LSP Syntaxt highlight
 
 -- vim.lsp.handlers["textDocument/semanticTokens/full"] = function() end
