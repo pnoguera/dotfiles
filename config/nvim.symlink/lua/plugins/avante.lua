@@ -13,26 +13,36 @@ return {
 		-- this file can contain specific instructions for your project
 		instructions_file = "avante.md",
 		-- for example
-		provider = "claude",
+		provider = "bedrock",
 		providers = {
-			claude = {
-				endpoint = "https://api.anthropic.com",
-				model = "claude-sonnet-4-20250514",
-				timeout = 30000, -- Timeout in milliseconds
-				extra_request_body = {
-					temperature = 0.75,
-					max_tokens = 20480,
-				},
+			bedrock = {
+				model = "eu.anthropic.claude-haiku-4-5-20251001-v1:0",
+				aws_region = "eu-west-1",
+				aws_profile = "DeveloperClaudeCodeDATAAIDev", -- optional
+				timeout = 30000,
+				-- extra_request_body = {
+				--     temperature = 0.75,
+				--     max_tokens = 20480,
+				-- },
 			},
-			moonshot = {
-				endpoint = "https://api.moonshot.ai/v1",
-				model = "kimi-k2-0711-preview",
-				timeout = 30000, -- Timeout in milliseconds
-				extra_request_body = {
-					temperature = 0.75,
-					max_tokens = 32768,
-				},
-			},
+			-- claude = {
+			-- 	endpoint = "https://api.anthropic.com",
+			-- 	model = "claude-sonnet-4-20250514",
+			-- 	timeout = 30000, -- Timeout in milliseconds
+			-- 	extra_request_body = {
+			-- 		temperature = 0.75,
+			-- 		max_tokens = 20480,
+			-- 	},
+			-- },
+			-- moonshot = {
+			-- 	endpoint = "https://api.moonshot.ai/v1",
+			-- 	model = "kimi-k2-0711-preview",
+			-- 	timeout = 30000, -- Timeout in milliseconds
+			-- 	extra_request_body = {
+			-- 		temperature = 0.75,
+			-- 		max_tokens = 32768,
+			-- 	},
+			-- },
 		},
 	},
 	dependencies = {
