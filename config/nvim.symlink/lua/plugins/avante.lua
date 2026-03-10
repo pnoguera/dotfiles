@@ -46,8 +46,35 @@ return {
 		-- this file can contain specific instructions for your project
 		instructions_file = "avante.md",
 		-- for example
+		behaviour = {
+			auto_suggestions = false, -- Experimental stage
+			auto_set_highlight_group = true,
+			auto_set_keymaps = true,
+			auto_apply_diff_after_generation = false,
+			support_paste_from_clipboard = true,
+			minimize_diff = true, -- Whether to remove unchanged lines when applying a code block
+			enable_token_counting = true, -- Whether to enable token counting. Default to true.
+			auto_add_current_file = true, -- Whether to automatically add the current file when opening a new chat. Default to true.
+			auto_approve_tool_permissions = false, -- Default: auto-approve all tools (no prompts)
+			-- Examples:
+			-- auto_approve_tool_permissions = false,                -- Show permission prompts for all tools
+			-- auto_approve_tool_permissions = {"bash", "str_replace"}, -- Auto-approve specific tools only
+			---@type "popup" | "inline_buttons"
+			confirmation_ui_style = "inline_buttons",
+			--- Whether to automatically open files and navigate to lines when ACP agent makes edits
+			---@type boolean
+			acp_follow_agent_locations = true,
+		},
 		provider = "bedrock",
 		providers = {
+			["claude-code"] = {
+				command = "npx",
+				args = { "@zed-industries/claude-code-acp" },
+				-- env = {
+				-- 	NODE_NO_WARNINGS = "1",
+				-- 	ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY"),
+				-- },
+			},
 			bedrock = {
 				model = "eu.anthropic.claude-haiku-4-5-20251001-v1:0",
 				aws_region = "eu-west-1",
