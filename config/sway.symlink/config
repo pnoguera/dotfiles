@@ -145,6 +145,8 @@ bindsym $mod+d exec "$fuzzel -T $terminal"
 # Emoji
 bindsym $mod+p exec fuzzmoji
 
+# Handy: speech to tech
+bindsym Ctrl+Space exec pkill -USR2 -x handy
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
