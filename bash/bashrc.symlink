@@ -165,7 +165,9 @@ if [[ $- == *i* ]]; then
     # keybindings
     ble-bind -m 'emacs' -f 'M-DEL' 'kill-backward-cword'
     ble-bind -m 'vi_imap' -f 'M-.' 'insert-last-argument'
-
+    ble-bind -m emacs -f 'C-x C-e' 'edit-and-execute-command'
+     ble-bind -m vi_imap -f 'C-x C-e' 'edit-and-execute-command'
+     ble-bind -m vi_nmap -f 'C-x C-e' 'edit-and-execute-command'
     # atuine
     eval "$(atuin init bash --disable-up-arrow)"
     set -o vi
