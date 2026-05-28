@@ -19,6 +19,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id gammastep-indicator -l 52.52437:13.41053 -m wayland &
 # exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id /usr/bin/indicator-sound-switcher
+exec --no-startup-id /usr/bin/handy
 
 # Inputs
 input * {
